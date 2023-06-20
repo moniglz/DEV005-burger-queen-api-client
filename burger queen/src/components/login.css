@@ -1,5 +1,5 @@
 @media (min-width: 768px) and (orientation: landscape) {
-  
+    
   body {
     background-color: white;
   }
@@ -32,19 +32,68 @@
     justify-content: center;
     align-items: center;
   }
+  #cont-login p {
+    display: flex;
+  }
     #cont-login {
+      display: flex;
       height: 50%;
       width: 60%;
       border-radius: 15px;
-      background-color: #ffffffd9;
+      background-color: #ffffff9f;
+      box-shadow: 3px 3px 11px 1px #57575740;
+      flex-direction: column;
+      align-items: center;
     }
-      .email {
-        height: 10%;
-        width: 85%;
+
+    #div-email, #div-password {
+      display: flex;
+      height: 27%;
+      width: 100%;
+      flex-direction: column;
+      align-self: center;
+    }
+    #div-email{
+      margin: 2em 0 -1em;
+    }
+    #div-password {
+      margin: 1.5em 0 0;
+    }
+    label {
+      margin: 0 0 -0.5em 1.5em;
+      align-self: flex-start;
+      font-family: var(--f-labels);
+      font-weight: var(--fw-labels);
+      font-size: 1.2em;
+    }
+      .email, .password {
+        height: 45%;
+        width: 80%;
+        margin: 1.1em 0 1.2em;
+        align-self: center;
+        background-color: #FFF8EB;
+        border-color: #E41900;
+        border-radius: 15px;
+        font-family: var(--f-placeholder);
+        font-weight: var(--fw-placeholder);
       }
-      .password {
-        height: 10%;
-        width: 85%;
+      .email::placeholder,
+      .password::placeholder {
+        text-align: left;
+        padding-left: .3rem;
+        font-size: 1.1em;
       }
 
+  .login-btn {
+    margin-top: 2em;
+    height: 13%;
+    width: 83%;
+    font-family: var(--f-buttons);
+    font-weight: var(--fw-buttons);
+    font-size: 1.2em;
+    color: white;
+    background-color: #E41900;
+    border: none;
+    border-radius: 15px;
+  }
 }
