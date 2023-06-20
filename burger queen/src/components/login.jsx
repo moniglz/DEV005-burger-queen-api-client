@@ -1,7 +1,7 @@
 //import React, { useState } from 'react';
 import './login.css'
 
-export const Login=()=>{
+export const Login = () => {
 
     return (
       <section>
