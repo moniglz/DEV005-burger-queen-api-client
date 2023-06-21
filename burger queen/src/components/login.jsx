@@ -1,7 +1,16 @@
-//import React, { useState } from 'react';
-import './login.css'
+import { useState } from 'react';
 
 export const Login = () => {
+    const [email, setEmail]=useState('');
+    const [password, setPassword]=useState('');
+
+    const handleClick=(e)=>{
+        setEmail(e.target.form[0].value);
+        setPassword(e.target.form[1].value)
+    }
+
+    console.log(email);
+    console.log(password);
 
     return (
       <section>
@@ -17,6 +26,7 @@ export const Login = () => {
               type="email"
               className="email"
               placeholder="Email"
+              //onChange={e=>setEmail(e.target.value)}
             />
         </div>
         <div id= 'div-password'>
@@ -27,7 +37,7 @@ export const Login = () => {
             placeholder="Escribe tu contraseña"
           />
         </div>
-          <button type='submit' className='login-btn'>Iniciar sesión</button>
+          <button type='submit' className='login-btn' onClick={handleClick}>Iniciar sesión</button>
 
         </form>
       </div>
