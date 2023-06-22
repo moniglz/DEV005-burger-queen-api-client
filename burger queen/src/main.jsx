@@ -3,9 +3,9 @@ import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 import "./index.css";
 import App from "./App";
-import { Waiter } from "./components/waiter"
-import { Admin } from "./components/Admin";
-import { Chef } from "./components/Chef";
+import { Waiter } from "./routes/waiter"
+import { Admin } from "./routes/Admin";
+import { Chef } from "./routes/Chef";
 
 const router = createBrowserRouter([
   {

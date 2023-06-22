@@ -2,6 +2,7 @@
     
   body {
     background-color: white;
+    background-image: none;
   }
 
   section {
@@ -28,7 +29,6 @@
     display: flex;
     height: auto;
     width: 52vw; 
-    background-image: url('../assets/img/fondo_login.png');
     justify-content: center;
     align-items: center;
   }
