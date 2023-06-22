@@ -1,0 +1,28 @@
+body {
+  background-image: url('../assets/img/background_BQ.png');
+}
+
+header{
+  display: flex;
+  background-color: #E41900;
+  height: 70px;
+  width: 100vw;
+    
+}
+nav{
+  margin: 20px;
+  width: auto;
+  height: 100%;
+  
+}
+.dateUser{
+  display: flex;
+  color: white;
+
+}
+
+aside {
+  height: 100vh;
+  width: 15%;
+  background-color: white;
+}
