@@ -22,7 +22,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/chef",
-    element: <Chef />
+    element: <Chef />,
   }
 ]);
 

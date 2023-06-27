@@ -1,4 +1,5 @@
 import "./waiter.css";
+import { AsideBar } from '../components/Aside.jsx'
 
 export const Waiter = () => {
   return (
@@ -15,11 +16,7 @@ export const Waiter = () => {
       </header>
 
       <aside className="side-bar">
-        <select>
-          <option>Nueva orden</option>
-          <option>Estatus pedido</option>
-        </select>
-        <button>Cerrar Sesión</button>
+        <AsideBar />
       </aside>
 
       <section>
