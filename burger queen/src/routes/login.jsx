@@ -1,5 +1,5 @@
 import "./Login.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
@@ -32,13 +32,13 @@ export const Login = () => {
       .then((data) => {
         if (data.user.role === "admin") {
           navigate("/admin");
-        }
-      })
-      .then((data) => {
-        if (data.user.role === "waiter") {
+        }else if (data.user.role === "waiter") {
           navigate("/waiter");
         }
-      });
+      })
+      // .then((data) => {
+        
+      // });
 
     // useEffect(()=>{
     //   const option={
