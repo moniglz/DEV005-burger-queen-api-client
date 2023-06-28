@@ -1,9 +1,10 @@
 import "./waiter.css";
-import { AsideBar } from '../assets/components/Aside.jsx'
+import { AsideBar } from '../assets/components/Aside.jsx';
+import { MenuTab } from "../assets/components/Menu-tab";
 
 export const Waiter = () => {
   return (
-    <>
+    <div className="waiter-container">
       <header>
         <nav>
           <image src="./src/assets/img/icono_menu.png">Menu</image>
@@ -19,24 +20,9 @@ export const Waiter = () => {
         <AsideBar />
       </aside>
 
-      <section>
-        <div className="tab">
-          <button className="tablinks" onClick="openMenu(event, 'Desayuno')">
-            Desayuno
-          </button>
-          <button className="tablinks" onClick="openMenu(event, 'Comida')">
-            Comida
-          </button>
-        </div>
-
-        <div id="Desayuno" className="tabcontent">
-          <h3>Desayuno</h3>
-        </div>
-
-        <div id="Comida" className="tabcontent">
-          <h3>Comida</h3>
-        </div>
+      <section className="menu-tab">
+        <MenuTab />
       </section>
-    </>
+    </div>
   );
 };
