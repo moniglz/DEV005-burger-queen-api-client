@@ -1,5 +1,5 @@
 import "./waiter.css";
-import { AsideBar } from '../components/Aside.jsx'
+import { AsideBar } from '../assets/components/Aside.jsx'
 
 export const Waiter = () => {
   return (
