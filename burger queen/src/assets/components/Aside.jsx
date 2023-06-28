@@ -5,40 +5,40 @@ import './Aside.css';
 
 export const AsideBar = () => {
   return (
-    <div className="options-waiter">
-      <ul className="list-unstyled ps-0">
-        <li className="mb-1">
+    <div className='options-waiter'>
+      <ul className='list-unstyled ps-0'>
+        <li className='mb-1'>
           <button
-            className="btn align-items-center rounded collapsed"
-            data-bs-target="#orders-collapse"
-            aria-expanded="false"
+            className='btn align-items-center rounded collapsed'
+            data-bs-target='#orders-collapse'
+            aria-expanded='false'
           >
-            <i className="bi bi-plus me-2"></i> Nueva orden
+            <i className='bi bi-plus me-2'></i> Nueva orden
           </button>
         </li>
-        <li className="mb-1">
+        <li className='mb-1'>
           <button
-            className="btn align-items-center rounded collapsed"
-            data-bs-toggle="collapse"
-            data-bs-target="#account-collapse"
-            aria-expanded="false"
+            className='btn align-items-center rounded collapsed'
+            data-bs-toggle='collapse'
+            data-bs-target='#account-collapse'
+            aria-expanded='false'
           >
-            <i className="bi bi-list me-2"></i> Estatus pedidos
+            <i className='bi bi-list me-2'></i> Estatus pedidos
           </button>
-          <div className="collapse" id="account-collapse">
-            <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li>
-                <a href="#" className="link-dark rounded">
+          <div className='collapse' id='account-collapse'>
+            <ul className='btn-toggle-nav list-unstyled fw-normal pb-1 small'>
+              <li className='submenu'>
+                <a href='#' className='link-dark rounded'>
                   Processed
                 </a>
               </li>
-              <li>
-                <a href="#" className="link-dark rounded">
+              <li className='submenu'>
+                <a href='#' className='link-dark rounded'>
                   Shipped
                 </a>
               </li>
-              <li>
-                <a href="#" className="link-dark rounded">
+              <li className='submenu'>
+                <a href='#' className='link-dark rounded'>
                   Returned
                 </a>
               </li>
@@ -47,10 +47,10 @@ export const AsideBar = () => {
         </li>
       </ul>
 
-      <section className="logout side-bar">
+      <section className='logout side-bar'>
         <hr />
-        <a href="#" className="link-dark rounded">
-          <i className="bi bi-box-arrow-right"></i>Salir
+        <a href='#' className='link-dark rounded'>
+          <i className='bi bi-box-arrow-right'></i>Salir
         </a>
       </section>
     </div>
