@@ -13,8 +13,6 @@ main {
   height: 100vh;
   height: -webkit-fill-available;
   max-height: 100vh;
-  overflow-x: auto;
-  overflow-y: hidden;
 }
 
 .options-waiter {
@@ -42,8 +40,9 @@ main {
 
 .bi {
   margin-left: -0.86rem;
+  margin-right: .5em;
   pointer-events: none;
-  fill: currentColor;
+  color: black;
 }
 
 .bi.bi-box-arrow-right {
@@ -66,7 +65,7 @@ main {
   font-weight: var(--fw-panel);
   line-height: 1.4rem;
   text-align: left;
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0);
   background-color: transparent;
   border: 0;
 }
@@ -103,10 +102,6 @@ main {
 .btn-toggle-nav a:hover,
 .btn-toggle-nav a:focus {
   background-color: #fff586;
-}
-
-.scrollarea {
-  overflow-y: auto;
 }
 
 .lh-tight {

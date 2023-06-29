@@ -1,26 +1,42 @@
+.menu-tab {
+  display: flex;
+  height: 80%;
+  width: 80%;
+  position: absolute;
+  margin: 6em 4em 3em 10em;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
 .tab {
   display: flex;
-  justify-content: center;
   margin-bottom: 20px;
+  width: 50%;
+  color: black;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .tab button {
-  background-color: transparent;
-  border: none;
-  color: #333;
-  font-size: 18px;
-  font-weight: 600;
-  padding: 10px 20px;
-  margin-right: 10px;
-  cursor: pointer;
+  height: 3em;
+  width: 6em;
+  border-radius: 15px 15px 0px 0px;
+  border-top: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+  border-left: 1px solid #CCC;
+  background: #FFF;
+  font-family: var(--f-buttons);
+  font-weight: 500;
 }
 
 .tab button.active {
+  height: 3.5em;
+  font-weight: bold;
   background-color: #f9a826;
-  color: #fff;
-  border-radius: 4px;
+  color: #000;
+  border-radius: 15px 15px 0 0;
 }
 
 .tabcontent {
-  margin-top: 20px;
+  height: 80%;
 }
