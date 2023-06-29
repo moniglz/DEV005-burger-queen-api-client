@@ -16,12 +16,13 @@
     display: flex;
     height: auto;
     width: 48vw;
-    background-color: #E41900;
+    background-color: #ff6d00;
     justify-content: center;
     align-items: center;
   }
     .logo img {
-      height: 27em;
+      margin-left: 1em;
+      height: 29em;
       width: auto;
     }
 
@@ -72,7 +73,7 @@
         margin: 1.1em 0 1.2em;
         align-self: center;
         background-color: #FFF8EB;
-        border-color: #E41900;
+        border-color: #ff6d00;
         border-radius: 15px;
         font-family: var(--f-placeholder);
         font-weight: var(--fw-placeholder);
@@ -92,7 +93,7 @@
     font-weight: var(--fw-buttons);
     font-size: 1.2em;
     color: white;
-    background-color: #E41900;
+    background-color: #ff6d00;
     border: none;
     border-radius: 15px;
   }

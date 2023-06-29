@@ -4,9 +4,9 @@ body {
 
 header{
   display: flex;
-  background-color: #E41900;
+  background-color: #ff6d00;
   height: 70px;
-  width: 100vw;
+  width: 100%;
   z-index: 20;
 }
 nav{
@@ -31,8 +31,4 @@ aside {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-.menu-tab {
-  overflow-y: auto;
 }
