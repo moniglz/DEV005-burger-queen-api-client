@@ -3,6 +3,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
+
+  // const [token, setToken] = useState("");
+
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -14,7 +17,7 @@ export const Login = () => {
     const inputPassword = e.target.form[1].value;
 
     if (!inputEmail || !inputPassword) {
-      setError("Por favor, ingresa email y contraseña");
+      setError("Ingresa email y contraseña");
       return;
     }
 
@@ -41,9 +44,7 @@ export const Login = () => {
         }
       })
       .then((data) => {
-        console.log(data.token);
-        localStorage.setItem('token', data.token);
-
+        localStorage.setItem('token', data.accessToken);
         if (data.user.role === "admin") {
           navigate("/admin");
         } else if (data.user.role === "waiter") {
