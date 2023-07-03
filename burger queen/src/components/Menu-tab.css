@@ -1,0 +1,108 @@
+.menu-tab {
+  display: flex;
+  height: 80%;
+  width: 80%;
+  position: absolute;
+  margin: 6em 4em 0em 10em;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.tab {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 0 3em;
+  width: 50%;
+  color: black;
+  align-items: flex-end;
+  justify-content: flex-start;
+  border: none;
+}
+
+.tab button {
+  height: 2.6em;
+  width: 30%;
+  color: #555;
+  background: #FFF;
+  font-family: var(--f-buttons);
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 15px 15px 0px 0px;
+  border-top: 1px solid #555;
+  border-right: 1px solid #555;
+  border-left: 1px solid #555;
+  border-bottom: none;
+  
+}
+
+.tab button.active {
+  height: 2.8em;
+  font-weight: 700;
+  line-height: 15px;
+  color: #000;
+  background-color: #f9a826;
+  font-size: 19px;
+  border: none;
+  border-radius: 15px 15px 0 0;
+}
+
+.tab-content {
+  height: auto;
+  width: 90%;
+  padding: 1em;
+  margin-left: 2.3em;
+  border-radius: 0rem 0rem 0.9375rem 0.9375rem;
+  border-top: 3.5px solid #FCB500;
+  border-right: 1px solid #FCB500;
+  border-bottom: 1px solid #FCB500;
+  border-left: 1px solid #FCB500;
+  background: #FFF;
+  box-shadow: 2px 2px 6px 0px rgba(87, 87, 87, 0.25);
+}
+
+.menu-container {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-container li {
+  margin-bottom: 10px;
+}
+
+.b-dmenu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.b-dmenu-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.b-dmenu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.b-dmenu-item {
+  margin-bottom: 1em;
+  border: 1px solid #FCB500;
+  border-radius: 4px;
+  padding: 1em;
+  background-color: #FFF;
+  box-shadow: 2px 2px 6px 0px rgba(87, 87, 87, 0.25);
+}
+
+.b-dmenu-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.b-dmenu-price {
+  font-size: 14px;
+  color: #555;
+}

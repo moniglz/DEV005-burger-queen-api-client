@@ -5,7 +5,7 @@
     background-image: none;
   }
 
-  section {
+  .section-division {
     display: flex;
     height: 100vh;
     width: 100vw;
@@ -36,15 +36,15 @@
   #cont-login p {
     display: flex;
   }
-    #cont-login {
-      display: flex;
-      height: 50%;
-      width: 60%;
-      border-radius: 15px;
-      background-color: #ffffff9f;
-      box-shadow: 3px 3px 11px 1px #57575740;
-      flex-direction: column;
-      align-items: center;
+  #cont-login {
+    display: flex;
+    height: 50%;
+    width: 60%;
+    border-radius: 15px;
+    background-color: #ffffff9f;
+    box-shadow: 3px 3px 11px 1px #57575740;
+    flex-direction: column;
+    align-items: center;
     }
 
     #div-email, #div-password {
@@ -86,7 +86,7 @@
       }
 
   .login-btn {
-    margin-top: 2em;
+    margin-top: .8em;
     height: 13%;
     width: 83%;
     font-family: var(--f-buttons);
@@ -96,5 +96,19 @@
     background-color: #ff6d00;
     border: none;
     border-radius: 15px;
+  }
+  
+  #error {
+    visibility: hidden;
+    height: 2em;
+  }
+  .error-msg {
+    color: red;
+    font-weight: 600;
+    font-size: .9em;
+  }
+  
+  .form-login:hover .error-msg {
+    visibility: visible;
   }
 }

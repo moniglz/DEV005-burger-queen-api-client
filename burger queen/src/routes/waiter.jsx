@@ -1,29 +1,31 @@
-import '../index.css';
 import "./waiter.css";
-import { AsideBar } from '../assets/components/Aside.jsx';
-import { MenuTab } from "../assets/components/Menu-tab";
+import { AsideBar } from "../components/Aside.jsx";
+import { MenuTab } from "../components/Menu-tab";
 
 export const Waiter = () => {
+
   return (
-    <div className="waiter-container">
-      <header>
-        <nav>
-          <image src="./src/assets/img/icono_menu.png">Menu</image>
-          <image src="./src/assets/img/logo_header.png">Logo</image>
-          <div className="dateUser">
-            <p>Name</p>
-            <p>Rol</p>
-          </div>
-        </nav>
-      </header>
+    <>
+      <div className="waiter-container">
+        <header>
+          <nav>
+            <img id="iconM" src="./src/assets/img/icono_menu.png" alt="icono-menu" />
+            <img id="logoH" src="./src/assets/img/logo_header.png" alt="logo-burgerqueen" />
+            <div className="dataUser">
+              <p>Name</p>
+              <p>Rol</p>
+            </div>
+          </nav>
+        </header>
 
-      <aside className="side-bar">
-        <AsideBar />
-      </aside>
+        <aside className="side-bar">
+          <AsideBar />
+        </aside>
 
-      <section className="menu-tab">
-        <MenuTab />
-      </section>
-    </div>
+        <section className="menu-tab">
+          <MenuTab />
+        </section>
+      </div>
+    </>
   );
 };

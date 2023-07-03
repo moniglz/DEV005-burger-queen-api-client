@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Satisfy&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Satisfy&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap");
 body {
   margin: 0;
-  background-image: url('../assets/img/background_BQ.png');
+  background-image: url("../assets/img/background_BQ.png");
 }
 
 :root {
-  --f-labels: 'Inter', sans-serif;
+  --f-labels: "Inter", sans-serif;
   --fw-labels: 700;
 
-  --f-placeholder: 'Inter', sans-serif;
+  --f-placeholder: "Inter", sans-serif;
   --fw-placeholder: 300;
 
-  --f-panel: 'Inter', sans-serif;
+  --f-panel: "Inter", sans-serif;
   --fw-panel: 500;
 
-  --f-buttons: 'Inter', sans-serif;
+  --f-buttons: "Inter", sans-serif;
   --fw-buttons: 600;
 
-  --f-text: 'Inter', sans-serif;
+  --f-text: "Inter", sans-serif;
   --fw-text: 400;
 }
