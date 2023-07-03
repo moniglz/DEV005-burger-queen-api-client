@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./Aside.css";
+import { Logout } from "./logout";
 
 export const AsideBar = () => {
   return (
@@ -48,9 +49,7 @@ export const AsideBar = () => {
       </ul>
 
       <section className="logout side-bar">
-        <a href="#" className="link-dark rounded">
-          <i className="bi bi-box-arrow-right"></i>Salir
-        </a>
+        <Logout />
       </section>
     </div>
   );

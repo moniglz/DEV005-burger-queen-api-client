@@ -27,23 +27,33 @@ const BD_Menu = ({ activeTab }) => {
     }
   }, [token]);
 
+  //Se obtiene el tipo de producto correspondiente a la pestaña activa
+  const tabType = activeTab === "Desayuno" ? "Desayuno" : "Almuerzo";
+
   // Filtrar según el tipo
   const filteredProducts = products.filter(
-    (product) => product.type === activeTab
+    (product) => product.type === tabType
   );
 
   return (
-    <section className="menu-container">
-      <ul>
-        {filteredProducts.map((product) => (
-          <li key={product.id}>
-            <p>{product.name}</p>
-            <p>Precio: ${product.price}</p>
-          </li>
+    <section className="card-products">
+      {filteredProducts.map((product) => (
+        <div className="card-product" key={product.id}>
+          <div className="product-image">
+            <img src={product.image} alt={product.name} />
+          </div>
+          <div className="info-product">
+            <p className="p-name">{product.name}</p>
+            <div className="p-price-add">
+            <p className="price">${product.price}</p>
+            <i className="bi bi-plus-circle"></i>
+            </div>
+          </div>
+        </div>
         ))}
-      </ul>
     </section>
   );
+  
 };
 
 BD_Menu.propTypes = {

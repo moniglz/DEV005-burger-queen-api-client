@@ -35,7 +35,7 @@ export const Login = () => {
     })
       .then((response) => {
         if (response.status === 200) {
-          console.log("¡Inicio de sesión correcto!");
+          console.log("¡Inicio de sesión exitoso!");
           return response.json();
         } else if (response.status >= 400) {
           throw new Error("Email o contraseña incorrectos");

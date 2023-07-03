@@ -11,7 +11,7 @@ export const MenuTab = () => {
 
   return (
     <>
-      <div className="tab">
+      <section className="tab">
         <button
           className={activeTab === "Desayuno" ? "tablinks active" : "tablinks"}
           onClick={() => handleTabClick("Desayuno")}
@@ -24,12 +24,12 @@ export const MenuTab = () => {
         >
           Comida
         </button>
-      </div>
+      </section>
 
-      <div className="tab-content">
+      <section className="tab-content">
         {activeTab === "Desayuno" && <BD_Menu activeTab={activeTab} />}
         {activeTab === "Comida" && <BD_Menu activeTab={activeTab} />}
-      </div>
+      </section>
 
       </>
   );

@@ -70,7 +70,7 @@
       .email, .password {
         height: 45%;
         width: 80%;
-        margin: 1.1em 0 1.2em;
+        margin: 1.1em 0 0 0;
         align-self: center;
         background-color: #FFF8EB;
         border-color: #ff6d00;
