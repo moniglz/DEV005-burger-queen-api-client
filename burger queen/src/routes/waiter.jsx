@@ -20,8 +20,13 @@ export const Waiter = () => {
         <AsideBar />
       </aside>
 
-      <section className="menu-tab">
+      <section >
+        <div className="menu-tab">
         <MenuTab />
+        </div>
+        <div className="detalle-pedido">
+          <h3>Detalle Pedido</h3>
+        </div>
       </section>
     </div>
   );

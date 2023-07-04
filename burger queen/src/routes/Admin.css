@@ -1,0 +1,46 @@
+.admin-container{
+    display: grid;
+    grid-template-columns: 15% auto;
+    grid-template-rows: 10% auto;
+    justify-content: stretch;
+    height: 100vh;
+}
+
+header{
+    grid-column: 1/3;
+    grid-row: 1/2;
+} 
+aside{
+    grid-column: 1/ 2;
+
+}
+.employees{
+    grid-column: 2/3;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+}
+
+table{
+    margin-top: 30px;
+    
+}
+tr th{
+    background-color: #FF6D00;
+    padding: 10px;
+    height: 50px;
+}
+td{
+    background-color: white;
+}
+.n{
+    border-radius:  21px 0px 0 0;  
+}
+.editar{
+    border-radius:  0px 21px 0 0;  
+}
+
+
+
+
+
