@@ -21,6 +21,7 @@
   justify-content: flex-start;
   border: none;
   z-index: 1;
+  z-index: 1;
 }
 
 .tab button {
@@ -67,6 +68,7 @@
   border-left: 1px solid #FCB500;
   background: #FFF;
   box-shadow: 2px 2px 6px 0px rgba(87, 87, 87, 0.25);
+  z-index: 1;
   z-index: 1;
 }
 
