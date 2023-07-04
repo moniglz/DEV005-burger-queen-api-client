@@ -1,3 +1,4 @@
+import '../index.css';
 import "./waiter.css";
 import { AsideBar } from "../components/Aside.jsx";
 import { MenuTab } from "../components/Menu-tab";
