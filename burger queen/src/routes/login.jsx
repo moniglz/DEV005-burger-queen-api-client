@@ -1,11 +1,8 @@
 import "./Login.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
-
-  // const [token, setToken] = useState("");
-
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -55,6 +52,19 @@ export const Login = () => {
         setError(error.message);
       });
   };
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      const userRole = localStorage.getItem("userRole");
+      if (userRole === "admin") {
+        navigate("/admin");
+      } else if (userRole === "waiter") {
+        navigate("/waiter");
+      }
+    }
+  }, [navigate]);
 
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
