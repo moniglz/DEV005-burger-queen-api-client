@@ -71,7 +71,7 @@ main {
 .btn:hover,
 .btn:focus {
   color: rgba(0, 0, 0, 0.85);
-  background-color: #FCCF00;
+  background-color: #fff586;
 }
 
 .btn::before {

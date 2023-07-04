@@ -10,6 +10,7 @@ header{
   z-index: 20;
 }
 nav{
+  display: inline-flex;
   margin: 20px;
   width: auto;
 }
@@ -35,12 +36,12 @@ nav{
 
 aside {
   height: 100vh;
-  grid-column: 1/2;
+  width: 15%;
   background-color: white;
 }
 
 .waiter-container {
-  display: grid;
-  grid-template-columns: 15% auto auto;
-  grid-template-rows: 10% auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
