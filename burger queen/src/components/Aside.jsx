@@ -10,7 +10,8 @@ export const AsideBar = () => {
       <ul className="list-unstyled ps-0">
         <li className="mb-1">
           <button
-            className="btn align-items-center rounded collapsed"
+            className="btn btn-toggle align-items-center rounded collapsed"
+            data-bs-toggle="collapse"
             data-bs-target="#orders-collapse"
             aria-expanded="false"
           >
@@ -19,7 +20,7 @@ export const AsideBar = () => {
         </li>
         <li className="mb-1">
           <button
-            className="btn align-items-center rounded collapsed"
+            className="btn btn-toggle align-items-center rounded collapsed"
             data-bs-toggle="collapse"
             data-bs-target="#account-collapse"
             aria-expanded="false"
