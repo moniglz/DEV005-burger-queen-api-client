@@ -80,7 +80,7 @@ export const Login = () => {
       <div className="form-login">
         <form id="cont-login">
           <div id="div-email">
-            <label>Email</label>
+            <label className="mail">Email</label>
             <input
               type="email"
               className="email"
@@ -89,7 +89,7 @@ export const Login = () => {
             />
           </div>
           <div id="div-password">
-            <label>Contraseña</label>
+            <label className="pass">Contraseña</label>
             <input
               type="password"
               className="password"

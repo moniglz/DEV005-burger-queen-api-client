@@ -9,7 +9,6 @@
     display: flex;
     height: 100vh;
     width: 100vw;
-    
 
   }
 
@@ -56,13 +55,13 @@
       align-self: center;
     }
     #div-email{
-      margin: 1.5em 0 -1em;
+      margin: 0 0 -1em;
     }
     #div-password {
       margin: 1.2em 0 0;
     }
-    label {
-      margin: 0 0 -0.5em 1.5em;
+    .mail, .pass {
+      margin: 0 0 -0.5em 1.7em;
       align-self: flex-start;
       font-family: var(--f-labels);
       font-weight: var(--fw-labels);
