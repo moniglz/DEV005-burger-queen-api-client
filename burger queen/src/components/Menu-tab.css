@@ -10,6 +10,7 @@
 
 .tab {
   position: absolute;
+  position: absolute;
   display: flex;
   flex-direction: row;
   margin: 0 0 0 4em;
@@ -49,6 +50,9 @@
 }
 
 .tab-content {
+  position: relative;
+  top: 3em;
+  height: 91%;
   position: relative;
   top: 3em;
   height: 91%;
