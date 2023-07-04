@@ -10,6 +10,7 @@
 
 .tab {
   position: absolute;
+  position: absolute;
   display: flex;
   flex-direction: row;
   margin: 0 0 0 4em;
@@ -19,6 +20,7 @@
   align-items: flex-end;
   justify-content: flex-start;
   border: none;
+  z-index: 1;
   z-index: 1;
 }
 
@@ -52,6 +54,9 @@
   position: relative;
   top: 3em;
   height: 91%;
+  position: relative;
+  top: 3em;
+  height: 91%;
   min-width: 50%;
   width: 80%;
   max-width: 90%;
@@ -63,6 +68,7 @@
   border-left: 1px solid #FCB500;
   background: #FFF;
   box-shadow: 2px 2px 6px 0px rgba(87, 87, 87, 0.25);
+  z-index: 1;
   z-index: 1;
 }
 
