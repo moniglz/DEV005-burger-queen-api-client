@@ -1,13 +1,17 @@
 body {
   background-image: url('../assets/img/background_BQ.png');
+ 
+  
 }
 
 header{
   display: flex;
-  background-color: #E41900;
+  background-color: #FF6D00;
   height: 70px;
-  width: 100vw;
+  
   z-index: 20;
+
+  grid-column: 1/3;
 }
 nav{
   margin: 20px;
@@ -23,16 +27,24 @@ nav{
 
 aside {
   height: 100vh;
-  width: 15%;
+  grid-column: 1/2;
   background-color: white;
 }
 
 .waiter-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 15% auto auto;
+  grid-template-rows: 10% auto;
 }
 
-.menu-tab {
-  overflow-y: auto;
+.menu-tab{
+  grid-column: 2/3;
+  background-color: blueviolet;
 }
+.detalle-pedido{
+  grid-column:3/4;
+  background-color: rgb(226, 43, 43);
+  
+}
+
+
