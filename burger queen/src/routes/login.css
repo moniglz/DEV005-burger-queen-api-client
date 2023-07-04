@@ -5,11 +5,10 @@
     background-image: none;
   }
 
-  section {
+  .section-division {
     display: flex;
     height: 100vh;
     width: 100vw;
-    
 
   }
 
@@ -17,12 +16,13 @@
     display: flex;
     height: auto;
     width: 48vw;
-    background-color: #E41900;
+    background-color: #ff6d00;
     justify-content: center;
     align-items: center;
   }
     .logo img {
-      height: 27em;
+      margin-left: 1em;
+      height: 29em;
       width: auto;
     }
 
@@ -36,15 +36,15 @@
   #cont-login p {
     display: flex;
   }
-    #cont-login {
-      display: flex;
-      height: 50%;
-      width: 60%;
-      border-radius: 15px;
-      background-color: #ffffff9f;
-      box-shadow: 3px 3px 11px 1px #57575740;
-      flex-direction: column;
-      align-items: center;
+  #cont-login {
+    display: flex;
+    height: 50%;
+    width: 60%;
+    border-radius: 15px;
+    background-color: #ffffff9f;
+    box-shadow: 3px 3px 11px 1px #57575740;
+    flex-direction: column;
+    align-items: center;
     }
 
     #div-email, #div-password {
@@ -55,13 +55,13 @@
       align-self: center;
     }
     #div-email{
-      margin: 2em 0 -1em;
+      margin: 0 0 -1em;
     }
     #div-password {
-      margin: 1.5em 0 0;
+      margin: 1.2em 0 0;
     }
-    label {
-      margin: 0 0 -0.5em 1.5em;
+    .mail, .pass {
+      margin: 0 0 -0.5em 1.7em;
       align-self: flex-start;
       font-family: var(--f-labels);
       font-weight: var(--fw-labels);
@@ -70,10 +70,10 @@
       .email, .password {
         height: 45%;
         width: 80%;
-        margin: 1.1em 0 1.2em;
+        margin: 1.1em 0 0 0;
         align-self: center;
         background-color: #FFF8EB;
-        border-color: #E41900;
+        border-color: #ff6d00;
         border-radius: 15px;
         font-family: var(--f-placeholder);
         font-weight: var(--fw-placeholder);
@@ -86,15 +86,29 @@
       }
 
   .login-btn {
-    margin-top: 2em;
+    margin-top: .8em;
     height: 13%;
     width: 83%;
     font-family: var(--f-buttons);
     font-weight: var(--fw-buttons);
     font-size: 1.2em;
     color: white;
-    background-color: #E41900;
+    background-color: #ff6d00;
     border: none;
     border-radius: 15px;
+  }
+  
+  #error {
+    visibility: hidden;
+    height: 2em;
+  }
+  .error-msg {
+    color: red;
+    font-weight: 600;
+    font-size: .9em;
+  }
+  
+  .form-login:hover .error-msg {
+    visibility: visible;
   }
 }

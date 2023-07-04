@@ -1,56 +1,52 @@
-import { AsideBar } from "../assets/components/Aside"
+import { AsideBar } from "../components/Aside";
 import "./Admin.css";
-import EmployeeForm from "../assets/components/EmployeeForm";
+import EmployeeForm from "../components/EmployeeForm";
 import { useState, useEffect } from "react";
-
 
 export const Admin = () => {
   const [columns, setColumns] = useState([]);
- // const [records, setRecords] = useState([]);
+  // const [records, setRecords] = useState([]);
 
-  const [loaded, setLoaded]=useState(false);
-  const token1=localStorage.getItem('token');
-  console.log('este es el toke: '+token1)
-
+  const [loaded, setLoaded] = useState(false);
+  const token1 = localStorage.getItem("token");
+  console.log("este es el toke: " + token1);
 
   //Eliminar usuarios
-  const handleClick=(id)=>{
-    fetch("http://localhost:8080/users" + id ,{
-      method:"DELETE"
-    })
-    .then(res=>console.log(res))
-  }
+  const handleClick = (id) => {
+    fetch("http://localhost:8080/users" + id, {
+      method: "DELETE",
+    }).then((res) => console.log(res));
+  };
   //Listar usuarios
-   useEffect(()=>{
-  fetch("http://localhost:8080/users", {
+  useEffect(() => {
+    fetch("http://localhost:8080/users", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "authorization": "Bearer "+ token1 ,
-      }
+        authorization: "Bearer " + token1,
+      },
     })
-    .then(response=>{
-      if (response.status === 200) {
-        return response.json();
-      } else if (response.status >= 400) {
-        throw new Error("Datos incorrectos");
-      } else {
-        throw new Error("Error inesperado");
-      }
-    })
-    .then(data=>{
-      //setColumns(Object.values(data))
-      console.log(data)
-        setColumns(data)
-      //console.log(columns[0].email)
+      .then((response) => {
+        if (response.status === 200) {
+          return response.json();
+        } else if (response.status >= 400) {
+          throw new Error("Datos incorrectos");
+        } else {
+          throw new Error("Error inesperado");
+        }
       })
-      .catch(error=>console.log(error))
-      .finally(()=>{
+      .then((data) => {
+        //setColumns(Object.values(data))
+        console.log(data);
+        setColumns(data);
+        //console.log(columns[0].email)
+      })
+      .catch((error) => console.log(error))
+      .finally(() => {
         setLoaded(true);
-      //console.log(columns[0])
-    })
-    },[]);
-
+        //console.log(columns[0])
+      });
+  }, [token1]);
 
   return (
     <>
@@ -71,40 +67,41 @@ export const Admin = () => {
         </aside>
 
         <section className="employees">
-        <EmployeeForm />
+          <EmployeeForm />
 
-        <table>
-          <thead>
-            <tr>
-              <th className="n">N°</th>
-              <th>Id</th>
-              <th>Nombre</th>
-              <th>Rol</th>
-              <th>Email</th>
-              <th>Password</th>
-              <th className="editar">Editar</th>
-            </tr>
-          </thead>
-          <tbody>
-            { loaded &&
-             columns.map((d,i)=>(
-                <tr key={i}>
-                  <td>{d.id}</td>
-                  <td>{d.id}</td>
-                  <td>Nombre</td>
-                  <td>{d.role}</td>
-                  <td>{d.email}</td>
-                  <td>********</td>
-                  
-                  <td><button onClick={handleClick(d.id)}>Eliminar</button> <button>Editar</button></td>
-                </tr>
-             ))
-            }
-           
-          </tbody>
-        </table>
+          <table>
+            <thead>
+              <tr>
+                <th className="n">N°</th>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Rol</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th className="editar">Editar</th>
+              </tr>
+            </thead>
+            <tbody>
+              {loaded &&
+                columns.map((d, i) => (
+                  <tr key={i}>
+                    <td>{d.id}</td>
+                    <td>{d.id}</td>
+                    <td>Nombre</td>
+                    <td>{d.role}</td>
+                    <td>{d.email}</td>
+                    <td>********</td>
+
+                    <td>
+                      <button onClick={handleClick(d.id)}>Eliminar</button>{" "}
+                      <button>Editar</button>
+                    </td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
         </section>
       </div>
     </>
-    )
-}
+  );
+};
