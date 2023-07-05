@@ -11,15 +11,23 @@ export const Admin = () => {
   const [loaded, setLoaded]=useState(false);
   const token1=localStorage.getItem('token');
   console.log('este es el toke: '+token1)
-
-
-  //Eliminar usuarios
+  
   const handleClick=(id)=>{
-    fetch("http://localhost:8080/users" + id ,{
-      method:"DELETE"
+    //e.preventDefault();
+
+    console.log(`http://localhost:8080/users/${id}`)
+    fetch(`http://localhost:8080/users/${id}` ,{
+      method:"DELETE",
+      headers:{
+        "Content-Type": "application/json",
+        "authorization": "Bearer "+ token1 ,
+      }
     })
     .then(res=>console.log(res))
+    .catch(err=>console.log(err))
+  
   }
+  
   //Listar usuarios
    useEffect(()=>{
   fetch("http://localhost:8080/users", {
@@ -71,7 +79,7 @@ export const Admin = () => {
         </aside>
 
         <section className="employees">
-        <EmployeeForm />
+        <EmployeeForm  />
 
         <table>
           <thead>
@@ -96,7 +104,7 @@ export const Admin = () => {
                   <td>{d.email}</td>
                   <td>********</td>
                   
-                  <td><button onClick={handleClick(d.id)}>Eliminar</button> <button>Editar</button></td>
+                  <td><button onClick={()=>handleClick(d.id)}>Eliminar</button> <button>Editar</button></td>
                 </tr>
              ))
             }

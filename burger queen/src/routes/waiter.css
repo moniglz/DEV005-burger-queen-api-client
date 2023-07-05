@@ -39,11 +39,9 @@ aside {
 
 .menu-tab{
   grid-column: 2/3;
-  background-color: blueviolet;
 }
 .detalle-pedido{
   grid-column:3/4;
-  background-color: rgb(226, 43, 43);
   
 }
 
