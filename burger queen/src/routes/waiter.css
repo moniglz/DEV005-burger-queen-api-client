@@ -41,7 +41,17 @@ aside {
 }
 
 .waiter-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 15% auto auto;
+  grid-template-rows: 10% auto;
 }
+
+.menu-tab{
+  grid-column: 2/3;
+}
+.detalle-pedido{
+  grid-column:3/4;
+  
+}
+
+

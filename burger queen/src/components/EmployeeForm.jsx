@@ -76,7 +76,7 @@ export default function EmployeeForm() {
             <div className="input">
               <label>Rol:</label>
               <select value={role} onChange={(e)=>setRole(e.target.value) }>
-                <option value="waiter">Mesero</option>
+                <option value="waiter">Chef</option>
                 <option value="chef">Cocinero</option>
                 <option value="admin">Administrador</option>
               </select>

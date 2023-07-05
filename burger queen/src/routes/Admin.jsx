@@ -5,18 +5,28 @@ import { useState, useEffect } from "react";
 
 export const Admin = () => {
   const [columns, setColumns] = useState([]);
-  // const [records, setRecords] = useState([]);
+ // const [records, setRecords] = useState([]);
 
-  const [loaded, setLoaded] = useState(false);
-  const token1 = localStorage.getItem("token");
-  console.log("este es el toke: " + token1);
+  const [loaded, setLoaded]=useState(false);
+  const token1=localStorage.getItem('token');
+  console.log('este es el toke: '+token1)
+  
+  const handleClick=(id)=>{
+    //e.preventDefault();
 
-  //Eliminar usuarios
-  const handleClick = (id) => {
-    fetch("http://localhost:8080/users" + id, {
-      method: "DELETE",
-    }).then((res) => console.log(res));
-  };
+    console.log(`http://localhost:8080/users/${id}`)
+    fetch(`http://localhost:8080/users/${id}` ,{
+      method:"DELETE",
+      headers:{
+        "Content-Type": "application/json",
+        "authorization": "Bearer "+ token1 ,
+      }
+    })
+    .then(res=>console.log(res))
+    .catch(err=>console.log(err))
+  
+  }
+  
   //Listar usuarios
   useEffect(() => {
     fetch("http://localhost:8080/users", {
@@ -67,39 +77,38 @@ export const Admin = () => {
         </aside>
 
         <section className="employees">
-          <EmployeeForm />
+        <EmployeeForm  />
 
-          <table>
-            <thead>
-              <tr>
-                <th className="n">N°</th>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Rol</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th className="editar">Editar</th>
-              </tr>
-            </thead>
-            <tbody>
-              {loaded &&
-                columns.map((d, i) => (
-                  <tr key={i}>
-                    <td>{d.id}</td>
-                    <td>{d.id}</td>
-                    <td>Nombre</td>
-                    <td>{d.role}</td>
-                    <td>{d.email}</td>
-                    <td>********</td>
-
-                    <td>
-                      <button onClick={handleClick(d.id)}>Eliminar</button>{" "}
-                      <button>Editar</button>
-                    </td>
-                  </tr>
-                ))}
-            </tbody>
-          </table>
+        <table>
+          <thead>
+            <tr>
+              <th className="n">N°</th>
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>Rol</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th className="editar">Editar</th>
+            </tr>
+          </thead>
+          <tbody>
+            { loaded &&
+             columns.map((d,i)=>(
+                <tr key={i}>
+                  <td>{d.id}</td>
+                  <td>{d.id}</td>
+                  <td>Nombre</td>
+                  <td>{d.role}</td>
+                  <td>{d.email}</td>
+                  <td>********</td>
+                  
+                  <td><button onClick={()=>handleClick(d.id)}>Eliminar</button> <button>Editar</button></td>
+                </tr>
+             ))
+            }
+           
+          </tbody>
+        </table>
         </section>
       </div>
     </>
