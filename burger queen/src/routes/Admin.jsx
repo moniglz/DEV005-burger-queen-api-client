@@ -12,19 +12,24 @@ export const Admin = () => {
   const token1=localStorage.getItem('token');
   console.log('este es el toke: '+token1)
   
-  const handleClick=(id)=>{
+  //Eliminar usuario
+  const handleClickEliminar=(id)=>{
     //e.preventDefault();
+    const res=confirm('Esta seguro que desea eliminar al usuario')
 
-    console.log(`http://localhost:8080/users/${id}`)
-    fetch(`http://localhost:8080/users/${id}` ,{
-      method:"DELETE",
-      headers:{
-        "Content-Type": "application/json",
-        "authorization": "Bearer "+ token1 ,
-      }
-    })
-    .then(res=>console.log(res))
-    .catch(err=>console.log(err))
+    if (res){
+      fetch(`http://localhost:8080/users/${id}` ,{
+        method:"DELETE",
+        headers:{
+          "Content-Type": "application/json",
+          "authorization": "Bearer "+ token1 ,
+        }
+      })
+      .then(res=>console.log(res))
+      .catch(err=>console.log(err))
+    }
+    //console.log(`http://localhost:8080/users/${id}`)
+    
   
   }
   
@@ -104,7 +109,7 @@ export const Admin = () => {
                   <td>{d.email}</td>
                   <td>********</td>
                   
-                  <td><button onClick={()=>handleClick(d.id)}>Eliminar</button> <button>Editar</button></td>
+                  <td><button onClick={()=>handleClickEliminar(d.id)}>Eliminar</button> <button>Editar</button></td>
                 </tr>
              ))
             }
