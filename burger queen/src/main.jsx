@@ -3,6 +3,7 @@ import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 import "./index.css";
 import App from "./App";
+import { Login } from "./routes/login";
 import { Waiter } from "./routes/waiter"
 import { Admin } from "./routes/Admin";
 import { Chef } from "./routes/Chef";
@@ -11,6 +12,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
   {
     path: "/waiter",

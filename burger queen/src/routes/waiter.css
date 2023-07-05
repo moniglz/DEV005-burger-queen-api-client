@@ -1,33 +1,42 @@
 body {
-  background-image: url('../assets/img/background_BQ.png');
- 
-  
+  background-image: url("../assets/img/background_BQ.png");
 }
 
 header{
   display: flex;
-  background-color: #FF6D00;
+  background-color: #ff6d00;
   height: 70px;
-  
+  width: 100%;
   z-index: 20;
-
-  grid-column: 1/3;
 }
 nav{
+  display: inline-flex;
   margin: 20px;
   width: auto;
-  height: 100%;
-  
 }
-.dateUser{
+#iconM {
+  height: 2em;
+  margin-right: 1.2rem;
+}
+#logoH {
+  height: 3.8em;
+  margin-top: -1rem;
+}
+
+.dataUser{
   display: flex;
   color: white;
-
+  line-height: .5em;
+  right: 6rem;
+  position: absolute;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
 }
 
 aside {
   height: 100vh;
-  grid-column: 1/2;
+  width: 15%;
   background-color: white;
 }
 

@@ -1,11 +1,8 @@
 import "./Login.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
-
-  // const [token, setToken] = useState("");
-
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -44,7 +41,6 @@ export const Login = () => {
         }
       })
       .then((data) => {
-        console.log(data)
         localStorage.setItem('token', data.accessToken);
         if (data.user.role === "admin") {
           navigate("/admin");
@@ -56,6 +52,19 @@ export const Login = () => {
         setError(error.message);
       });
   };
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      const userRole = localStorage.getItem("userRole");
+      if (userRole === "admin") {
+        navigate("/admin");
+      } else if (userRole === "waiter") {
+        navigate("/waiter");
+      }
+    }
+  }, [navigate]);
 
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -71,7 +80,7 @@ export const Login = () => {
       <div className="form-login">
         <form id="cont-login">
           <div id="div-email">
-            <label>Email</label>
+            <label className="mail">Email</label>
             <input
               type="email"
               className="email"
@@ -80,7 +89,7 @@ export const Login = () => {
             />
           </div>
           <div id="div-password">
-            <label>Contraseña</label>
+            <label className="pass">Contraseña</label>
             <input
               type="password"
               className="password"

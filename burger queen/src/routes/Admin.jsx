@@ -1,8 +1,7 @@
-import { AsideBar } from "../assets/components/Aside"
+import { AsideBar } from "../components/Aside";
 import "./Admin.css";
-import EmployeeForm from "../assets/components/EmployeeForm";
+import EmployeeForm from "../components/EmployeeForm";
 import { useState, useEffect } from "react";
-
 
 export const Admin = () => {
   const [columns, setColumns] = useState([]);
@@ -34,36 +33,35 @@ export const Admin = () => {
   }
   
   //Listar usuarios
-   useEffect(()=>{
-  fetch("http://localhost:8080/users", {
+  useEffect(() => {
+    fetch("http://localhost:8080/users", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "authorization": "Bearer "+ token1 ,
-      }
+        authorization: "Bearer " + token1,
+      },
     })
-    .then(response=>{
-      if (response.status === 200) {
-        return response.json();
-      } else if (response.status >= 400) {
-        throw new Error("Datos incorrectos");
-      } else {
-        throw new Error("Error inesperado");
-      }
-    })
-    .then(data=>{
-      //setColumns(Object.values(data))
-      console.log(data)
-        setColumns(data)
-      //console.log(columns[0].email)
+      .then((response) => {
+        if (response.status === 200) {
+          return response.json();
+        } else if (response.status >= 400) {
+          throw new Error("Datos incorrectos");
+        } else {
+          throw new Error("Error inesperado");
+        }
       })
-      .catch(error=>console.log(error))
-      .finally(()=>{
+      .then((data) => {
+        //setColumns(Object.values(data))
+        console.log(data);
+        setColumns(data);
+        //console.log(columns[0].email)
+      })
+      .catch((error) => console.log(error))
+      .finally(() => {
         setLoaded(true);
-      //console.log(columns[0])
-    })
-    },[]);
-
+        //console.log(columns[0])
+      });
+  }, [token1]);
 
   return (
     <>
@@ -119,5 +117,5 @@ export const Admin = () => {
         </section>
       </div>
     </>
-    )
-}
+  );
+};
