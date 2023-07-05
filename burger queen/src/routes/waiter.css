@@ -45,3 +45,12 @@ aside {
   flex-direction: column;
   min-height: 100vh;
 }
+
+/*Panel de ordenes*/
+.o-container {
+  position: absolute;
+  height: 80%;
+  width: 15%;
+  align-self: flex-end;
+  top: 6em;
+}

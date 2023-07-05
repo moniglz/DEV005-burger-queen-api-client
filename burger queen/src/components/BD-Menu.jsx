@@ -35,8 +35,7 @@ const BD_Menu = ({ activeTab }) => {
     (product) => product.type === tabType
   );
 
-  return (
-    <section className="card-products">
+  return (<>
       {filteredProducts.map((product) => (
         <div className="card-product" key={product.id}>
           <div className="product-image">
@@ -51,7 +50,7 @@ const BD_Menu = ({ activeTab }) => {
           </div>
         </div>
         ))}
-    </section>
+  </>
   );
   
 };

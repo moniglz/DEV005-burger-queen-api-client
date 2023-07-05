@@ -2,6 +2,7 @@ import '../index.css';
 import "./waiter.css";
 import { AsideBar } from "../components/Aside.jsx";
 import { MenuTab } from "../components/Menu-tab";
+import { OrderDetails } from "../components/OrderDetails.jsx";
 
 export const Waiter = () => {
 
@@ -26,6 +27,10 @@ export const Waiter = () => {
         <section className="menu-tab">
           <MenuTab />
         </section>
+
+        <aside className='o-container'>
+          <OrderDetails />
+        </aside>
       </div>
     </>
   );

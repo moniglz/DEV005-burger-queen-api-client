@@ -3,13 +3,12 @@
   height: 80%;
   width: 80%;
   position: absolute;
-  margin: 6em 4em 0em 10em;
+  margin: 5.2em 4em 0em 10em;
   flex-direction: column;
   flex-wrap: nowrap;
 }
 
 .tab {
-  position: absolute;
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -17,10 +16,9 @@
   height: 9%;
   width: 50%;
   color: black;
-  align-items: flex-end;
+  align-items: baseline;
   justify-content: flex-start;
   border: none;
-  z-index: 1;
   z-index: 1;
 }
 
@@ -50,41 +48,34 @@
   border-radius: 15px 15px 0 0;
 }
 
+/* Estilos de tarjetitas de productos */
 .tab-content {
-  position: relative;
-  top: 3em;
-  height: 91%;
-  position: relative;
-  top: 3em;
-  height: 91%;
+  display: flex;
+  height: auto;
   min-width: 50%;
-  width: 80%;
-  max-width: 90%;
+  width: auto;
+  max-width: 76.5%;
   margin-left: 2.3em;
-  border-radius: 0rem 0rem 0.9375rem 0.9375rem;
+  padding: 1.4em;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border-radius: 0rem 0rem 0.95rem 0.95rem;
   border-top: 3.5px solid #FCB500;
   border-right: 1px solid #FCB500;
   border-bottom: 1px solid #FCB500;
   border-left: 1px solid #FCB500;
   background: #FFF;
   box-shadow: 2px 2px 6px 0px rgba(87, 87, 87, 0.25);
+  position: relative;
+  top: 3em;
   z-index: 1;
-  z-index: 1;
-}
-
-/* Estilos de tarjetitas de productos */
-.card-products{
-  display: grid;
-  height: 100%;
-  width: auto;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  align-items: center;
+  justify-content: flex-start;
 }
 
 .card-product {
-  height: 11.4em;
+  height: 10.8em;
   width: 10em;
+  margin: 0.5em 1em 1em 1em;
   justify-self: center;
   background-color: white;
   border: 0.2px solid #e9e9e9;
@@ -93,7 +84,7 @@
 }
 
 .product-image {
-  height: 6.4em;
+  height: 6em;
   width: 10em;
   overflow: hidden;
   border-radius: 15px 15px 0 0;
@@ -104,7 +95,7 @@
 }
 
 .info-product {
-  height: 5em;
+  height: 5.2em;
   line-height: 1.2em;
   padding: 0.3em 0.6em;
 }
@@ -114,14 +105,14 @@
   height: 2em;
   font-family: var(--f-text);
   font-size: 15.6px;
-  line-height: 1.2em;
+  line-height: 1.1em;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .p-price-add {
   display: inline-flex;
-  height: 2em;
+  height: 1.6em;
   width: 9em;
   align-items: baseline;
   justify-content: space-between;
@@ -129,12 +120,14 @@
 }
 
 .price {
-  margin: 0.8em 0 0;
+  margin: 0.6em 0 0;
   color: #FF6D00;
   font-family: var(--f-text);
   font-weight: 700;
+  font-size: 1.1em;
   line-height: 1em;
 }
 .bi.bi-plus-circle {
   margin-left: 1.2em;
+  font-size: 1.2em;
 }
