@@ -7,6 +7,7 @@ export default function EmployeeForm() {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
   const token1 = localStorage.getItem("token");
+  
   const handleSubmit = (e) => {
     console.log("presionaste en guardar " + e);
     e.preventDefault();

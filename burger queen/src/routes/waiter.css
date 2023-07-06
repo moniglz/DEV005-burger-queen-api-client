@@ -34,23 +34,26 @@ nav{
   flex-wrap: nowrap;
 }
 
-aside {
-  height: 100vh;
+.side-bar {
+  height: 100%;
   width: 15%;
   background-color: white;
+  position: relative;
 }
 
 .waiter-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 /*Panel de ordenes*/
 .o-container {
-  position: absolute;
   height: 80%;
-  width: 15%;
-  align-self: flex-end;
-  top: 6em;
+  width: 20%;  
+  top: 6.6em;
+  right: 1.2em;
+  position: absolute;
+  background-color: rgba(251, 170, 56, 0.375);
+  border-radius: 15px;
 }

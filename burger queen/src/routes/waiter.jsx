@@ -28,9 +28,9 @@ export const Waiter = () => {
           <MenuTab />
         </section>
 
-        <aside className='o-container'>
+        <section className='o-container'>
           <OrderDetails />
-        </aside>
+        </section>
       </div>
     </>
   );

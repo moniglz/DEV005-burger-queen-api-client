@@ -19,38 +19,24 @@ export const AsideBar = () => {
         </li>
         <li className="mb-1">
           <button
-            className="btn align-items-center rounded collapsed"
+            className="btn"
             data-bs-toggle="collapse"
             data-bs-target="#account-collapse"
             aria-expanded="false"
           >
             <i className="bi bi-list-ul"></i> Estatus pedidos
           </button>
-          {/* <div className="collapse" id="account-collapse">
-            <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li className="submenu">
-                <a href="#" className="link-dark rounded">
-                  Processed
-                </a>
-              </li>
-              <li className="submenu">
-                <a href="#" className="link-dark rounded">
-                  Shipped
-                </a>
-              </li>
-              <li className="submenu">
-                <a href="#" className="link-dark rounded">
-                  Returned
-                </a>
-              </li>
-            </ul>
-          </div> */}
         </li>
+
+        <li className="">
+          <section className="logout side-bar">
+            <Logout />
+          </section>
+        </li>
+
       </ul>
 
-      <section className="logout side-bar">
-        <Logout />
-      </section>
+      
     </div>
   );
 };
