@@ -35,7 +35,8 @@ const BD_Menu = ({ activeTab }) => {
     (product) => product.type === tabType
   );
 
-  return (<>
+  return (
+    <>
       {filteredProducts.map((product) => (
         <div className="card-product" key={product.id}>
           <div className="product-image">
@@ -44,13 +45,15 @@ const BD_Menu = ({ activeTab }) => {
           <div className="info-product">
             <p className="p-name">{product.name}</p>
             <div className="p-price-add">
-            <p className="price">${product.price}</p>
-            <i className="bi bi-plus-circle"></i>
+              <p className="price">${product.price}</p>
+              <div className="btn-plus">
+                <button className="btn bi bi-plus-circle"></button>
+              </div>
             </div>
           </div>
         </div>
-        ))}
-  </>
+      ))}
+    </>
   );
   
 };
