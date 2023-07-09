@@ -132,12 +132,19 @@
 }
 
 .btn-plus {
-  margin-left: 5.2em;
+  margin-left: 4.2em;
   width: 6em;
-  font-family: var(--f-buttons);
   font-size: 17px;
 }
 
-.btn.bi.bi-plus-circle {
-  font-size: 1.2em;
+.btn-add-product {
+  height: 1.4em;
+  width: 1.4em;
+  font-size: 1.3rem;
+  font-family: var(--f-buttons);
+  font-weight: var(--fw-buttons);
+  border: 1px solid #555;
+  border-radius: 50%;
+  background: white;
+  line-height: 1.2em;
 }

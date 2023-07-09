@@ -1,10 +1,20 @@
 import '../index.css';
 import "./waiter.css";
+import { useState } from 'react';
 import { AsideBar } from "../components/Aside.jsx";
 import { MenuTab } from "../components/Menu-tab";
-import { OrderDetails } from "../components/OrderDetails.jsx";
+import { OrderDetails } from "../components/OrderDetails";
 
-export const Waiter = () => {
+export const Waiter = () => {  
+  const [orderItems, setOrderItems] = useState([]);
+
+  const handleAddToOrder = (productName, productPrice) => {
+    const newOrderItem = {
+      name: productName,
+      price: productPrice,
+    };
+    setOrderItems([...orderItems, newOrderItem]);
+  };
 
   return (
     <>
@@ -25,11 +35,11 @@ export const Waiter = () => {
         </aside>
 
         <section className="menu-tab">
-          <MenuTab />
+          <MenuTab handleAddToOrder={handleAddToOrder} />
         </section>
 
         <section className='o-container'>
-          <OrderDetails />
+          <OrderDetails orderItems={orderItems} />
         </section>
       </div>
     </>

@@ -3,7 +3,7 @@ import "../components/Menu-tab.css";
 import { getProducts } from "../services/products.service";
 import PropTypes from 'prop-types';
 
-const BD_Menu = ({ activeTab }) => {
+const BD_Menu = ({ activeTab, handleAddToOrder }) => {
   const [products, setProducts] = useState([]);
   const [token, setToken] = useState("");
 
@@ -35,6 +35,12 @@ const BD_Menu = ({ activeTab }) => {
     (product) => product.type === tabType
   );
 
+  const handleAddProduct = (e, productName, productPrice) => {
+    e.preventDefault();
+    handleAddToOrder(productName, productPrice);
+    console.log('Clicaste +');
+  };
+
   return (
     <>
       {filteredProducts.map((product) => (
@@ -47,7 +53,10 @@ const BD_Menu = ({ activeTab }) => {
             <div className="p-price-add">
               <p className="price">${product.price}</p>
               <div className="btn-plus">
-                <button className="btn bi bi-plus-circle"></button>
+                <button type="button" 
+                  className="btn-add-product"
+                  onClick={(e) => handleAddProduct(e, product.name, product.price)}
+                >+</button>
               </div>
             </div>
           </div>
@@ -60,6 +69,7 @@ const BD_Menu = ({ activeTab }) => {
 
 BD_Menu.propTypes = {
   activeTab: PropTypes.string.isRequired,
+  handleAddToOrder: PropTypes.func.isRequired,
 };
 
 export default BD_Menu;

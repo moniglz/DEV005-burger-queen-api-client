@@ -1,28 +1,42 @@
-export const OrderDetails = () => {
+import PropTypes from 'prop-types';
+
+export const OrderDetails = ({ orderItems }) => {
 
   return (
     <>
       <table className="new-order">
-        <tr className="new-order-title">Nueva orden</tr>
+        <thead className="new-order-title">
+          <tr>
+            <th id="title-h"> Nueva orden </th>
+          </tr>
+        </thead>
+
         <tbody className="order-det">
-          <div className="product-data">
-            <td className="name-product">Café (ejemplo){/*Aquí va el producto*/}</td>
-            <td className="price-product">$10.00{/*Aquí su precio*/}</td>
-          </div>
-
-          <div className="total-sendorder">
-            <tr className="total-payment">
-              <td>Total:</td>
-              <td className="total"> ${/*Aquí va la cantiddd a pagar*/}</td>
+          {orderItems.map((item, index) => (
+            <tr className="product-data" key={index}>
+              <td className="name-product">{item.name}</td>
+              <td className="price-product">${item.price}</td>
             </tr>
-
-            <tr className="btn-cont-so">
-              <button className="btn-sendorder">Generar orden</button>
-            </tr>
-          </div>
-
+          ))}
         </tbody>
+
+        <tfoot className="total-sendorder">
+          <tr className="total-payment">
+            <td>Total:</td>
+            <td className="total"> ${/*Aquí va la cantidad a pagar*/}</td>
+          </tr>
+
+          <tr className="btn-cont-so">
+            <td id="td-button">
+              <button className="btn-sendorder">Generar orden</button>
+            </td>
+          </tr>
+        </tfoot>
       </table>
     </>
   );
 }
+
+OrderDetails.propTypes = {
+  orderItems: PropTypes.array.isRequired,
+};
