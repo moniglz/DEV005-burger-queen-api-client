@@ -1,6 +1,22 @@
 import PropTypes from 'prop-types';
 
 export const OrderDetails = ({ orderItems }) => {
+  const totalPayment = () => {
+    let total = 0;
+    for (let i=0; i < orderItems.length; i++) {
+      total += orderItems[i].price;
+    }
+    return total;
+  };
+
+  const handleAddProduct = () => {
+    console.log('Se agregará producto');
+  };
+
+  const handleSubstractProduct = () => {
+    console.log('Se quitará producto');
+  }
+
 
   return (
     <>
@@ -14,8 +30,16 @@ export const OrderDetails = ({ orderItems }) => {
         <tbody className="order-det">
           {orderItems.map((item, index) => (
             <tr className="product-data" key={index}>
-              <td className="name-product">{item.name}</td>
-              <td className="price-product">${item.price}</td>
+              <td className="product-qty">
+                <button className="btn-qty add" onClick={handleAddProduct}>+</button>
+                <span className="quantity">1{item.quantity}</span>
+                <button className="btn-qty minus" onClick={handleSubstractProduct}>-</button>
+              </td>
+              <td className="product-info">
+                <div className="product-name">{item.name}</div>
+                <div className="product-price">${item.price}</div>
+              </td>
+
             </tr>
           ))}
         </tbody>
@@ -23,7 +47,10 @@ export const OrderDetails = ({ orderItems }) => {
         <tfoot className="total-sendorder">
           <tr className="total-payment">
             <td>Total:</td>
-            <td className="total"> ${/*Aquí va la cantidad a pagar*/}</td>
+            <td className="total">
+              {" "}
+              ${totalPayment() /*Aquí va la cantidad a pagar*/}
+            </td>
           </tr>
 
           <tr className="btn-cont-so">
