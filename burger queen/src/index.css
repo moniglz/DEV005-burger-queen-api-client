@@ -20,3 +20,7 @@ body {
   --f-text: "Inter", sans-serif;
   --fw-text: 400;
 }
+
+tr, th {
+  background-color: none;
+}

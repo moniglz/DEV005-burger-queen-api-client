@@ -28,7 +28,7 @@ export const Login = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({email, password}),
+      body: JSON.stringify({ email, password }),
     })
       .then((response) => {
         if (response.status === 200) {
@@ -55,6 +55,11 @@ export const Login = () => {
       });
   };
 
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   useEffect(() => {
     const token = localStorage.getItem("token");
 
@@ -67,11 +72,6 @@ export const Login = () => {
       }
     }
   }, [navigate]);
-
-  const isValidEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
 
   return (
     <section className="section-division">

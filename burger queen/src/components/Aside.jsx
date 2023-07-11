@@ -59,7 +59,7 @@ export const AsideBar = () => {
               data-bs-target="#orders-collapse"
               aria-expanded="false"
             >
-              <i className="bi bi-plus-circle-dotted"></i> Nueva orden
+              <i className="bi bi-plus-circle-fill"></i> Nueva orden
             </button>
           </li>
           <li className="mb-1">
@@ -71,25 +71,6 @@ export const AsideBar = () => {
             >
               <i className="bi bi-list-ul"></i> Estatus pedidos
             </button>
-            {/* <div className="collapse" id="account-collapse">
-              <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li className="submenu">
-                  <a href="#" className="link-dark rounded">
-                    Processed
-                  </a>
-                </li>
-                <li className="submenu">
-                  <a href="#" className="link-dark rounded">
-                    Shipped
-                  </a>
-                </li>
-                <li className="submenu">
-                  <a href="#" className="link-dark rounded">
-                    Returned
-                  </a>
-                </li>
-              </ul>
-            </div> */}
           </li>
         </ul>
       

@@ -9,7 +9,7 @@ header{
   width: 100%;
   z-index: 20;
 }
- nav{
+nav{
   display: inline-flex;
   margin: 20px;
   width: auto;
@@ -34,24 +34,179 @@ header{
   flex-wrap: nowrap;
 }
 
-.waiter-container aside {
-  height: 100vh;
+.side-bar {
+  height: 100%;
   width: 15%;
   background-color: white;
+  position: relative;
 }
 
 .waiter-container {
-  display: grid;
-  grid-template-columns: 15% auto auto;
-  grid-template-rows: 10% auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-.menu-tab{
-  grid-column: 2/3;
-}
-.detalle-pedido{
-  grid-column:3/4;
-  
+/*Panel de ordenes*/
+.o-container {
+  display: flex;
+  height: 80%;
+  width: 30%;
+  top: 6.6em;
+  right: 1.2em;
+  position: absolute;
+  background: rgba(255, 231, 170, 0.55);
+  border-radius: 15px;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
 }
 
+.new-order {
+  display: inline-flex;
+  height: 100%;
+  width: 95%;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
 
+.new-order-title {
+  display: flex;
+  flex-direction: column;
+  height: 2.2em;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  font-family: var(--f-text);
+  font-size: 22px;
+  font-weight: 600;
+  justify-content: center;
+}
+
+.order-det {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  overflow-y: scroll;
+}
+
+.product-data {
+  display: flex;
+  height: 6.8em;
+  width: 94%;
+  margin: 0.2em 0 0.5em 0;
+  background-color: white;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.product-qty {
+  display: flex;
+  flex-direction: column;
+  width: 2em;
+  margin-right: 0.3em;
+  margin-left: 0.3em;
+  position: relative;  
+  background: none;
+}
+
+.quantity {
+  font-family: var(--f-text);
+  font-weight: 600;
+  text-align: center;
+}
+
+.btn-qty {
+  height: 1.5em;
+  width: 1.5em;
+  border-radius: 50%;
+  align-items: center;
+  display: none;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  font-family: var(--f-panel);
+  font-weight: var(--fw-panel);
+  font-size: 18px;
+  position: relative;
+  line-height: 1.2em;
+  align-items: center;
+  background: none;
+}
+
+.product-name, .product-price {
+  margin-right: 1em;
+}
+.product-name{
+  width: 80%;
+}
+.product-price {
+  width: 20%;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#title-h, #td-button, .product-name, .product-price, #td-total, .total {
+  background: none;
+}
+
+#title-h {
+  display: flex;
+  margin-top: -0.5em;
+}
+
+.total-sendorder {
+  display: flex;
+  height: 6em;
+  width: 90%;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0.8em;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.total-payment {
+  display: flex;
+  height: 40%;
+  width: 100%;
+  font-family: var(--f-text);
+  font-size: 19px;
+  font-weight: 600;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 8px;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+}
+
+.btn-cont-so {
+  display: flex;
+  height: 60%;
+  width: 105%;
+  flex-direction: column;
+}
+#td-btn-so {
+  display: flex;
+  width: 100%;
+  background: none;
+}
+.btn-sendorder {
+  height: 2.4em;
+  width: 100%;
+  font-family: var(--f-buttons);
+  font-weight: 500;  
+  font-size: 20px;
+  color: white;
+  border-radius: 15px;
+  background-color: #ff6d00;
+}
