@@ -7,6 +7,8 @@ import { Login } from "./routes/login";
 import { Waiter } from "./routes/waiter"
 import { Admin } from "./routes/Admin";
 import { Chef } from "./routes/Chef";
+import './assets/icons/all.min.js'
+//import './assets/icons/all.min.css'
 
 const router = createBrowserRouter([
   {

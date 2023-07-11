@@ -1,110 +1,72 @@
 import { AsideBar } from "../components/Aside";
 import "./Admin.css";
-import EmployeeForm from "../components/EmployeeForm";
-import { useState, useEffect } from "react";
-//import { DeleteUser } from "../assets/services/users";
+//import { useState, useEffect } from "react";
+//import { handleClickEditar } from "../services/users.service";
+import { Employees } from "../components/Employees";
 
 export const Admin = () => {
-  const [columns, setColumns] = useState([]);
- // const [records, setRecords] = useState([]);
-  const [loaded, setLoaded]=useState(false);
-  const token1=localStorage.getItem('token');
-  console.log('este es el toke: '+token1);
 
-  const handleClick=(id)=>{
-    //e.preventDefault();
-    console.log(`http://localhost:8080/users/${id}`)
-    fetch(`http://localhost:8080/users/${id}` ,{
-      method:"DELETE",
-      headers:{
-        "Content-Type": "application/json",
-        "authorization": "Bearer "+ token1 ,
-      }
-    })
-    .then(res=>console.log(res))
-    .catch(err=>console.log(err))
-  }
-  //Listar usuarios
-  useEffect(()=>{
-  fetch("http://localhost:8080/users", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "authorization": "Bearer "+ token1 ,
-      }
-    })
-    .then(response=>{
-      if (response.status === 200) {
-        return response.json();
-      } else if (response.status >= 400) {
-        throw new Error("Datos incorrectos");
-      } else {
-        throw new Error("Error inesperado");
-      }
-    })
-    .then(data=>{
-      //setColumns(Object.values(data))
-      console.log(data)
-        setColumns(data)
-      //console.log(columns[0].email)
-      })
-      .catch(error=>console.log(error))
-      .finally(()=>{
-        setLoaded(true);
-      //console.log(columns[0])
-    })
-    },[token1]);
+  const email=localStorage.getItem('email');
+  const role=localStorage.getItem('role');
+  //const [columns, setColumns] = useState([]);
+  //const [updateUser, setUpdateUser]=useState(-1)
+ // const [records, setRecords] = useState([]);
+
+  //
+  
+  
+  // //Eliminar usuario
+  // const handleClickEliminar=(id)=>{
+  //   //e.preventDefault();
+  //   const res=confirm('Esta seguro que desea eliminar al usuario')
+
+  //   if (res){
+  //     fetch(`http://localhost:8080/users/${id}` ,{
+  //       method:"DELETE",
+  //       headers:{
+  //         "Content-Type": "application/json",
+  //         "authorization": "Bearer "+ token1 ,
+  //       }
+  //     })
+  //     .then(res=>console.log(res))
+  //     .catch(err=>console.log(err))
+  //   }
+  //   //console.log(`http://localhost:8080/users/${id}`)
+    
+  
+  // }
+  
 
   return (
     <>
       <div className="admin-container">
         <header>
-          <nav>
-            <image src="../src/assets/img/icono_menu.png">Menu</image>
-            <image src="../src/assets/img/logo_header.png">Logo</image>
+          <nav className="nav-header">
+            <div className="menu-left">
+            <label htmlFor="btn-nav" className="btn-nav"><i className="fas fa-bars"></i></label>
+            <input type="checkbox" id="btn-nav"></input>
+              {/* <img id="iconM" src="./src/assets/img/icono_menu.png" alt="icono-menu" /> */}
+              <img id="logoH" src="./src/assets/img/logo_header.png" alt="logo-burgerqueen" />
+            </div>
+          
             <div className="dateUser">
-              <p>Name</p>
-              <p>Rol</p>
+              <p>{email}</p>
+              <p>{role==='admin'?'Administrador':role==='waiter'?'Mesero':'Cocinero'}</p>
             </div>
           </nav>
         </header>
+
         <aside className="side-bar">
           <AsideBar />
         </aside>
+
         <section className="employees">
-          <EmployeeForm />
-          <table>
-            <thead>
-              <tr>
-                <th className="n">N°</th>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Rol</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th className="editar">Editar</th>
-              </tr>
-            </thead>
-            <tbody>
-              {loaded &&
-                columns.map((d, i) => (
-                  <tr key={i}>
-                    <td>{d.id}</td>
-                    <td>{d.id}</td>
-                    <td>Nombre</td>
-                    <td>{d.role}</td>
-                    <td>{d.email}</td>
-                    <td>********</td>
-                    <td>
-                      <button onClick={()=>handleClick(d.id)}>Eliminar</button>{" "}
-                      <button>Editar</button>
-                    </td>
-                  </tr>
-                ))}
-            </tbody>
-          </table>
+          
+        <Employees />
+
+       
         </section>
       </div>
     </>
   );
-}
+};

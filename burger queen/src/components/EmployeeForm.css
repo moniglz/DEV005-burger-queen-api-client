@@ -31,7 +31,7 @@ input, button{
     align-items: flex-end;
 }
 select{
-    width: 190px;
+    width: 230px;
     border-radius: 15px;
     border: 1,8px solid black;
     height: 35px;

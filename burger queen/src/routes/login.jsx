@@ -41,7 +41,9 @@ export const Login = () => {
         }
       })
       .then((data) => {
-        localStorage.setItem("token", data.accessToken);
+        localStorage.setItem('token', data.accessToken);
+        localStorage.setItem('email', data.user.email);
+        localStorage.setItem('role', data.user.role);
         if (data.user.role === "admin") {
           navigate("/admin");
         } else if (data.user.role === "waiter") {

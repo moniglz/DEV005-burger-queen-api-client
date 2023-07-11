@@ -6,12 +6,14 @@ import "./EmployeeForm.css";
 
 const initialForm={ 
   id:null,
-  email:'',
-  password: '',
-  role:''};
+  name:'',
+  price:'',
+  image:'',
+  type:'',
+  dateEntry:''};
 
 
-const EmployeeForm=({createUser, updateUser, dataForm, setDataForm})=> {
+const ProductForm=({createProduct, updateProduct, dataForm, setDataForm})=> {
 
   
   const [form, setForm]=useState(initialForm)
@@ -42,9 +44,9 @@ const EmployeeForm=({createUser, updateUser, dataForm, setDataForm})=> {
     e.preventDefault();
 
     if (form.id===null){
-      createUser(form);
+      createProduct(form);
     }else{
-      updateUser(form)
+      updateProduct(form)
     }
 
     handleReset();
@@ -54,7 +56,7 @@ const EmployeeForm=({createUser, updateUser, dataForm, setDataForm})=> {
     return (
         <form onSubmit={handleSubmit}>
           <div className="header-form">
-            <h5>{dataForm?'Editar Trabajador':'Agregar Nuevo Trabajador'}</h5>
+            <h5>{dataForm?'Editar Producto':'Agregar Nuevo Producto'}</h5>
           </div>
           <div className="div-left">
             <div className="input">
@@ -66,22 +68,22 @@ const EmployeeForm=({createUser, updateUser, dataForm, setDataForm})=> {
                 // disabled="false"
               />
             </div>
-            {/* <div className="input">
+            <div className="input">
               <label>Nombre:</label>
               <input
                 type="text"
                 name="name"
                 placeholder="Nombre"
               />
-            </div> */}
+            </div>
             
             <div className="input">
-              <label>Email:</label>
+              <label>Precio:</label>
               <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                value={form.email}
+                type="number"
+                name="precio"
+                placeholder="Precio"
+                value={form.price}
                 
                 onChange={handleChange}
               />
@@ -90,22 +92,21 @@ const EmployeeForm=({createUser, updateUser, dataForm, setDataForm})=> {
           {/* <div className="vacio"></div> */}
           <div className="div-rigth">
             <div className="input">
-              <label>Password:</label>
+              <label>Imagen:</label>
               <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                value={form.password}
+                type="file"
+                name="image"
+                placeholder="Imagen"
+                value={form.image}
                 onChange={handleChange}
               />
             </div>
             <div className="input">
-              <label>Rol:</label>
-              <select  name="role" value={form.role} onChange={handleChange}>
+              <label>Categoría:</label>
+              <select  name="role" value={form.type} onChange={handleChange}>
                 <option value=""></option>
-                <option value="waiter">Mesero</option>
-                <option value="chef">Cocinero</option>
-                <option value="admin">Administrador</option>
+                <option value="desayuno">Desayuno</option>
+                <option value="comida">Comida</option>
               </select>
             </div>
             <div className="input">
@@ -117,5 +118,5 @@ const EmployeeForm=({createUser, updateUser, dataForm, setDataForm})=> {
     );
   };
 
-  export default EmployeeForm;
+  export default ProductForm;
   
