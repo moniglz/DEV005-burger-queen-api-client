@@ -39,7 +39,7 @@ export const Waiter = () => {
         </section>
 
         <section className='o-container'>
-          <OrderDetails orderItems={orderItems} />
+          <OrderDetails orderItems={orderItems} setOrderItems={setOrderItems}/>
         </section>
       </div>
     </>

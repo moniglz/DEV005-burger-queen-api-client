@@ -3,20 +3,15 @@ import PropTypes from 'prop-types';
 export const OrderDetails = ({ orderItems }) => {
   const totalPayment = () => {
     let total = 0;
-    for (let i=0; i < orderItems.length; i++) {
+    for (let i = 0; i < orderItems.length; i++) {
       total += orderItems[i].price;
     }
     return total;
   };
 
-  const handleAddProduct = () => {
-    console.log('Se agregará producto');
-  };
-
-  const handleSubstractProduct = () => {
-    console.log('Se quitará producto');
+  const handleAddingProduct = () => {
+    console.log('Agregará producto')
   }
-
 
   return (
     <>
@@ -31,9 +26,9 @@ export const OrderDetails = ({ orderItems }) => {
           {orderItems.map((item, index) => (
             <tr className="product-data" key={index}>
               <td className="product-qty">
-                <button className="btn-qty add" onClick={handleAddProduct}>+</button>
-                <span className="quantity">1{item.quantity}</span>
-                <button className="btn-qty minus" onClick={handleSubstractProduct}>-</button>
+                <button className="btn-qty add" onClick={handleAddingProduct}>+</button>
+                <span className="quantity">{item.quantity > 0 ? item.quantity : 1}</span>
+                <button className="btn-qty minus">-</button>
               </td>
               <td className="product-info">
                 <div className="product-name">{item.name}</div>
@@ -46,7 +41,7 @@ export const OrderDetails = ({ orderItems }) => {
 
         <tfoot className="total-sendorder">
           <tr className="total-payment">
-            <td>Total:</td>
+            <td id="td-total">Total:</td>
             <td className="total">
               {" "}
               ${totalPayment() /*Aquí va la cantidad a pagar*/}
@@ -54,7 +49,7 @@ export const OrderDetails = ({ orderItems }) => {
           </tr>
 
           <tr className="btn-cont-so">
-            <td id="td-button">
+            <td id="td-btn-so">
               <button className="btn-sendorder">Generar orden</button>
             </td>
           </tr>

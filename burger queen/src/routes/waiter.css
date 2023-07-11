@@ -68,6 +68,7 @@ nav{
   width: 95%;
   flex-direction: column;
   flex-wrap: nowrap;
+  align-items: center;
 }
 
 .new-order-title {
@@ -85,7 +86,6 @@ nav{
 
 .order-det {
   display: flex;
-  height: 70%;
   width: 100%;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -110,7 +110,8 @@ nav{
   width: 2em;
   margin-right: 0.3em;
   margin-left: 0.3em;
-  position: relative;
+  position: relative;  
+  background: none;
 }
 
 .quantity {
@@ -124,6 +125,7 @@ nav{
   width: 1.5em;
   border-radius: 50%;
   align-items: center;
+  display: none;
 }
 
 .product-info {
@@ -136,6 +138,7 @@ nav{
   position: relative;
   line-height: 1.2em;
   align-items: center;
+  background: none;
 }
 
 .product-name, .product-price {
@@ -150,7 +153,7 @@ nav{
   font-weight: 600;
 }
 
-#title-h, #td-button, .product-name, .product-price {
+#title-h, #td-button, .product-name, .product-price, #td-total, .total {
   background: none;
 }
 
@@ -161,18 +164,19 @@ nav{
 
 .total-sendorder {
   display: flex;
-  height: 3em;
-  width: 93%;
+  height: 6em;
+  width: 90%;
   flex-direction: column;
   position: absolute;
   bottom: 0.8em;
   flex-wrap: nowrap;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .total-payment {
   display: flex;
-  height: 1.8em;
+  height: 40%;
   width: 100%;
   font-family: var(--f-text);
   font-size: 19px;
@@ -185,18 +189,23 @@ nav{
   flex-wrap: nowrap;
 }
 
-.btn-cont-so{
+.btn-cont-so {
+  display: flex;
+  height: 60%;
+  width: 105%;
+  flex-direction: column;
+}
+#td-btn-so {
   display: flex;
   width: 100%;
-  flex-direction: column;
-  align-items: center;
+  background: none;
 }
 .btn-sendorder {
   height: 2.4em;
   width: 100%;
   font-family: var(--f-buttons);
   font-weight: 500;  
-  font-size: 18px;
+  font-size: 20px;
   color: white;
   border-radius: 15px;
   background-color: #ff6d00;
