@@ -1,8 +1,9 @@
 import { useState } from "react";
 import "./Menu-tab.css";
 import BD_Menu from "./BD-Menu";
+import PropTypes from "prop-types";
 
-export const MenuTab = () => {
+export const MenuTab = ({ handleAddToOrder }) => {
   const [activeTab, setActiveTab] = useState("Desayuno");
 
   const handleTabClick = (tab) => {
@@ -27,10 +28,15 @@ export const MenuTab = () => {
       </section>
 
       <section className="tab-content">
-        {activeTab === "Desayuno" && <BD_Menu activeTab={activeTab} />}
-        {activeTab === "Comida" && <BD_Menu activeTab={activeTab} />}
+        {activeTab === "Desayuno" && <BD_Menu activeTab={activeTab} handleAddToOrder={handleAddToOrder} />}
+        {activeTab === "Comida" && <BD_Menu activeTab={activeTab} handleAddToOrder={handleAddToOrder} />}
       </section>
+
 
       </>
   );
 };
+
+MenuTab.propTypes = {
+  handleAddToOrder: PropTypes.func.isRequired,
+}

@@ -7,7 +7,7 @@ import { ProductsTable } from './ProductsTable';
 const token=localStorage.getItem('token');
   console.log('este es el toke: '+token)
 
-export const Employees = () => {
+export const Products = () => {
 
   const [db, setDb]=useState('');
   const [dataForm, setDataForm]=useState([]);
@@ -16,7 +16,7 @@ export const Employees = () => {
 
   //Listar usuarios
   useEffect(() => {
-    fetch("http://localhost:8080/users", {
+    fetch("http://localhost:8080/products", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -47,7 +47,7 @@ export const Employees = () => {
   const createProduct=(user)=>{
     console.log(user)
     user.id='';
-    fetch("http://localhost:8080/users", {
+    fetch("http://localhost:8080/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -77,7 +77,7 @@ export const Employees = () => {
 
   //actualizar producto
   const updateProduct=(user)=>{ 
-    fetch(`http://localhost:8080/users/${user.id}`, {
+    fetch(`http://localhost:8080/products/${user.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -110,7 +110,7 @@ export const Employees = () => {
   const deleteProduct=(id)=>{  
     const isDelete= confirm(`¿Estas seguro de eliminar el usuario con el id '${id}'?`)
     if (isDelete){
-      fetch(`http://localhost:8080/users/${id}` ,{
+      fetch(`http://localhost:8080/products/${id}` ,{
         method:"DELETE",
         headers:{
           "Content-Type": "application/json",
@@ -144,7 +144,7 @@ export const Employees = () => {
       <ProductForm createProduct={createProduct} updateProduct={updateProduct} dataForm={dataForm} setDataForm={setDataForm}/>
     </div>
     <div>
-      <ProductsTable loaded={loaded} data = {db} setDataForm={setDataForm} deleteUser={deleteProduct} />
+      <ProductsTable loaded={loaded} data = {db} setDataForm={setDataForm} deleteProduct={deleteProduct} />
     </div>
     </>
   )

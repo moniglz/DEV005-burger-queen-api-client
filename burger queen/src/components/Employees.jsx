@@ -9,7 +9,7 @@ const token=localStorage.getItem('token');
 
 export const Employees = () => {
 
-  const [db, setDb]=useState('');
+  const [db, setDb]=useState([]);
   const [dataForm, setDataForm]=useState([]);
   const [loaded, setLoaded]=useState(false)
 
@@ -144,7 +144,7 @@ export const Employees = () => {
       <EmployeeForm createUser={createUser} updateUser={updateUser} dataForm={dataForm} setDataForm={setDataForm}/>
     </div>
     <div>
-      <EmployeesTable loaded={loaded} data = {db} setDataForm={setDataForm} deleteUser={deleteUser} />
+      <EmployeesTable loaded={loaded} data={db} setDataForm={setDataForm} deleteUser={deleteUser} />
     </div>
     </>
   )

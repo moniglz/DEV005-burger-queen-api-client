@@ -5,9 +5,9 @@ body {
 header{
   display: flex;
   background-color: #ff6d00;
-  height: 70px;
+  /* height: 70px;
   width: 100%;
-  z-index: 20;
+  z-index: 20; */
 }
  nav{
   display: inline-flex;

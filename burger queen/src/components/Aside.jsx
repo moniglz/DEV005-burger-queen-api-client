@@ -4,13 +4,19 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "./Aside.css";
 import { Logout } from "./logout";
 import "../routes/Admin.css"
+//import { useNavigate } from "react-router-dom";
 
-export const AsideBar = () => {
+export const AsideBar = ({setNavigate}) => {
   const role=localStorage.getItem('role');
+  // const navigate = useNavigate();
 
-  // const handleClic=(e)=>{
-  //   console.log(e.target.value)
-  // }
+  const handleNavigate=(e)=>{
+    e.preventDefault();
+    setNavigate(e.target.innerText)
+
+    //console.log(e.target.innerText)
+    // navigate("/");
+  }
 
   return (
     <>{role==='admin'?
@@ -22,20 +28,20 @@ export const AsideBar = () => {
                       <span>Mantenimiento</span>
                     </a>
                     <ul>
-                      <li value='empleados' ><a href=""><i className="fa fa-user-pen"></i><span>Empleados</span></a></li>
-                      <li><a href=""><i className="fa fa-utensils"></i><span>Productos</span></a></li>
+                      <li  name='empleados' onClick={handleNavigate}><a href="" name='empleados' ><i className="fa fa-user-pen" name='empleados'></i><span name='empleados'>Empleados</span></a></li>
+                      <li  name='productos' onClick={handleNavigate}><a href="" name='productos'><i className="fa fa-utensils" name='productos'></i><span name='productos'>Productos</span></a></li>
                     </ul>
                 </div>
-              <li><a href="#">
+              <li onClick={handleNavigate}><a href="" >
                   <i className="fa fa-plus-circle"></i>
                   <span>Nueva orden</span></a>
               </li>
-              <li>
-                  <a href="#">
+              {/* <li onClick={handleNavigate}>
+                  <a href="">
                   <i className="fa fa-list-ol"></i>
                   <span>Órdenes</span></a>
-              </li>
-              <li>
+              </li> */}
+              <li onClick={handleNavigate}>
                 <a href="#">
                 <i className="fa fa-list-check"></i>
                 <span>Status pedido</span></a>
@@ -44,7 +50,10 @@ export const AsideBar = () => {
           </div>
           <div className="menu-bootom">
             <ul className="navigation">
-              <li><a href=""><i className="fa fa-right-from-bracket"></i><span>Salir</span></a></li>   
+              <li>
+              <Logout />
+              {/* <a href=""><i className="fa fa-right-from-bracket"></i><span>Salir</span></a> */}
+              </li>   
             </ul>
           </div>
           

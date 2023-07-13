@@ -1,5 +1,5 @@
 //import React from 'react'
-import { ProductTableRow } from './EmployeeTableRow'
+import { ProductTableRow } from './ProductTableRow'
 
 export const ProductsTable = ({loaded , data, setDataForm, deleteProduct}) => {
 
@@ -20,7 +20,7 @@ export const ProductsTable = ({loaded , data, setDataForm, deleteProduct}) => {
           </thead>
           <tbody>
             { 
-            loaded===false? <tr><td>Sin Datos</td></tr>: data.map((d)=> <ProductTableRow key={d.id} product={d} setDataForm={setDataForm} deleteUser={deleteProduct}/>)    }
+            loaded===false? <tr><td>Sin Datos</td></tr>: data.map((d)=> <ProductTableRow key={d.id} product={d} setDataForm={setDataForm} deleteProduct={deleteProduct}/>)    }
 
           </tbody>
         </table>

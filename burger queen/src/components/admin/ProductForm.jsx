@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./EmployeeForm.css";
+import "../EmployeeForm.css";
 
 
 //import {guardar} from "/src/routes/Admin.jsx";
@@ -65,6 +65,8 @@ const ProductForm=({createProduct, updateProduct, dataForm, setDataForm})=> {
                 type="text"
                 name="id"
                 placeholder="Id"
+                value={form.id}
+                onChange={handleChange}
                 // disabled="false"
               />
             </div>
@@ -74,6 +76,8 @@ const ProductForm=({createProduct, updateProduct, dataForm, setDataForm})=> {
                 type="text"
                 name="name"
                 placeholder="Nombre"
+                value={form.name}
+                onChange={handleChange}
               />
             </div>
             
@@ -84,7 +88,6 @@ const ProductForm=({createProduct, updateProduct, dataForm, setDataForm})=> {
                 name="precio"
                 placeholder="Precio"
                 value={form.price}
-                
                 onChange={handleChange}
               />
             </div>
@@ -94,7 +97,7 @@ const ProductForm=({createProduct, updateProduct, dataForm, setDataForm})=> {
             <div className="input">
               <label>Imagen:</label>
               <input
-                type="file"
+                type="text"
                 name="image"
                 placeholder="Imagen"
                 value={form.image}
@@ -105,8 +108,8 @@ const ProductForm=({createProduct, updateProduct, dataForm, setDataForm})=> {
               <label>Categoría:</label>
               <select  name="role" value={form.type} onChange={handleChange}>
                 <option value=""></option>
-                <option value="desayuno">Desayuno</option>
-                <option value="comida">Comida</option>
+                <option value="Desayuno">Desayuno</option>
+                <option value="Almuerzo">Almuerzo</option>
               </select>
             </div>
             <div className="input">

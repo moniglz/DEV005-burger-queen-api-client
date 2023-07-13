@@ -164,7 +164,7 @@ html {
   transform:translateX(10%);
   
 }
-.navigation li:hover, .active{
+.navigation li:hover, .navigation li:active{
   background: #FCCF00; 
   /* #e0e0e058*/
   /* background: #e0e0e08c; */
