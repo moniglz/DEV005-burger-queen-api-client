@@ -2,41 +2,17 @@ import { AsideBar } from "../components/Aside";
 import "./Admin.css";
 //import { useState, useEffect } from "react";
 //import { handleClickEditar } from "../services/users.service";
+import {Products} from '../components/admin/Products'
 import { Employees } from "../components/Employees";
+import {MenuTab} from '../components/Menu-tab'
+import {StatusPedido} from '../components/waiter/StatusPedido'
+import { useState } from "react";
 
 export const Admin = () => {
+  const [navigate, setNavigate]=useState('Empleados')
 
   const email=localStorage.getItem('email');
   const role=localStorage.getItem('role');
-  //const [columns, setColumns] = useState([]);
-  //const [updateUser, setUpdateUser]=useState(-1)
- // const [records, setRecords] = useState([]);
-
-  //
-  
-  
-  // //Eliminar usuario
-  // const handleClickEliminar=(id)=>{
-  //   //e.preventDefault();
-  //   const res=confirm('Esta seguro que desea eliminar al usuario')
-
-  //   if (res){
-  //     fetch(`http://localhost:8080/users/${id}` ,{
-  //       method:"DELETE",
-  //       headers:{
-  //         "Content-Type": "application/json",
-  //         "authorization": "Bearer "+ token1 ,
-  //       }
-  //     })
-  //     .then(res=>console.log(res))
-  //     .catch(err=>console.log(err))
-  //   }
-  //   //console.log(`http://localhost:8080/users/${id}`)
-    
-  
-  // }
-  
-
   return (
     <>
       <div className="admin-container">
@@ -57,14 +33,15 @@ export const Admin = () => {
         </header>
 
         <aside className="side-bar">
-          <AsideBar />
+          <AsideBar setNavigate={setNavigate}/>
         </aside>
 
         <section className="employees">
-          
-        <Employees />
-
-       
+        {navigate==='Empleados'&&  <Employees />}
+        {navigate==='Productos'&&  <Products />} 
+        {navigate==='Nueva orden'&&  <MenuTab />} 
+        {navigate==='Status pedido'&&  <StatusPedido />} 
+      
         </section>
       </div>
     </>

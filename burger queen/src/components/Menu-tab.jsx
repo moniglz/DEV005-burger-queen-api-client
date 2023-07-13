@@ -32,6 +32,7 @@ export const MenuTab = ({ handleAddToOrder }) => {
         {activeTab === "Comida" && <BD_Menu activeTab={activeTab} handleAddToOrder={handleAddToOrder} />}
       </section>
 
+
       </>
   );
 };
