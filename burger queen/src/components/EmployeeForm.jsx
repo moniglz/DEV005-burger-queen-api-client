@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./EmployeeForm.css";
-
+import PropTypes from 'prop-types';
 
 //import {guardar} from "/src/routes/Admin.jsx";
 
@@ -117,5 +117,11 @@ const EmployeeForm=({createUser, updateUser, dataForm, setDataForm})=> {
     );
   };
 
-  export default EmployeeForm;
-  
+export default EmployeeForm;
+
+EmployeeForm.propTypes = {
+  createUser: PropTypes.func.isRequired,
+  updateUser: PropTypes.func.isRequired,
+  dataForm: PropTypes.object,
+  setDataForm: PropTypes.func.isRequired,
+};

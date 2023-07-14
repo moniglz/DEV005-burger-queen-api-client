@@ -4,6 +4,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "./Aside.css";
 import { Logout } from "./logout";
 import "../routes/Admin.css"
+import PropTypes from "prop-types";
 //import { useNavigate } from "react-router-dom";
 
 export const AsideBar = ({setNavigate}) => {
@@ -92,4 +93,8 @@ export const AsideBar = ({setNavigate}) => {
     </>
     
   );
+};
+
+AsideBar.propTypes = {
+  setNavigate: PropTypes.func.isRequired,
 };

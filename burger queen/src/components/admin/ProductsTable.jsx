@@ -1,11 +1,11 @@
-//import React from 'react'
-import { ProductTableRow } from './ProductTableRow'
+import { ProductTableRow } from './ProductTableRow';
+import PropTypes from "prop-types";
 
-export const ProductsTable = ({loaded , data, setDataForm, deleteProduct}) => {
+export const ProductsTable = ({ loaded, data, setDataForm, deleteProduct }) => {
 
   return (
     <div>
-         <table>
+        <table>
           <thead>
             <tr>
               <th className="n">N°</th>
@@ -27,3 +27,10 @@ export const ProductsTable = ({loaded , data, setDataForm, deleteProduct}) => {
     </div>
   )
 }
+
+ProductsTable.propTypes = {
+  loaded: PropTypes.bool.isRequired,
+  data: PropTypes.array.isRequired,
+  setDataForm: PropTypes.func.isRequired,
+  deleteProduct: PropTypes.func.isRequired,
+};
