@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
-
 import ProductForm from "./ProductForm";
 import { ProductsTable } from './ProductsTable';
-
 
 const token=localStorage.getItem('token');
   console.log('este es el toke: '+token)
@@ -12,7 +10,6 @@ export const Products = () => {
   const [db, setDb]=useState('');
   const [dataForm, setDataForm]=useState([]);
   const [loaded, setLoaded]=useState(false)
-
 
   //Listar usuarios
   useEffect(() => {
@@ -24,7 +21,6 @@ export const Products = () => {
           },
         })
         .then((response) => {
-        
           if (response.status === 200) {
             return response.json();
           } else if (response.status >= 400) {
@@ -34,14 +30,13 @@ export const Products = () => {
           }
         })
         .then((data) => {
-      
           setLoaded(true)
           setDb(data);
         })
         .catch((error) =>
         console.log(error)
         )
-      } , []);
+      }, []);
 
   //crear nuevo producto
   const createProduct=(user)=>{
@@ -63,8 +58,7 @@ export const Products = () => {
         throw new Error("Datos incorrectos");
       } else {
         throw new Error("Error inesperado");
-      }
-      
+      } 
     })
     .then((dataJs) => {
       console.log(dataJs.user)
@@ -72,7 +66,7 @@ export const Products = () => {
     })
     .catch((error) =>
     console.log(error)
-    ) 
+    );
   }
 
   //actualizar producto
@@ -94,7 +88,6 @@ export const Products = () => {
       } else {
         throw new Error("Error inesperado");
       }
-      
     })
     .then((dataJs) => {
       console.log(dataJs)
@@ -103,7 +96,7 @@ export const Products = () => {
     })
     .catch((error) =>
     console.log(error)
-    )
+    );
   }
   
   //Eliminar producto
@@ -147,5 +140,5 @@ export const Products = () => {
       <ProductsTable loaded={loaded} data = {db} setDataForm={setDataForm} deleteProduct={deleteProduct} />
     </div>
     </>
-  )
+  );
 }

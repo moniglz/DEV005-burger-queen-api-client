@@ -1,11 +1,12 @@
-import { ProductTableRow } from './ProductTableRow';
+import { ProductTableRow } from './ProductTableRow'
+import './Products.css'
 import PropTypes from "prop-types";
 
-export const ProductsTable = ({ loaded, data, setDataForm, deleteProduct }) => {
+export const ProductsTable = ({loaded , data, setDataForm, deleteProduct}) => {
 
   return (
-    <div>
-        <table>
+    <div className='table-products'>
+        <table >
           <thead>
             <tr>
               <th className="n">N°</th>
@@ -18,19 +19,21 @@ export const ProductsTable = ({ loaded, data, setDataForm, deleteProduct }) => {
               <th className="editar">Editar</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody >
+          
             { 
-            loaded===false? <tr><td>Sin Datos</td></tr>: data.map((d)=> <ProductTableRow key={d.id} product={d} setDataForm={setDataForm} deleteProduct={deleteProduct}/>)    }
-
+            loaded===false? <tr><td>Sin Datos</td></tr>: data.map((d)=> <ProductTableRow key={d.id} product={d} setDataForm={setDataForm} deleteProduct={deleteProduct}/>)   
+            }            
+        
           </tbody>
         </table>
     </div>
-  )
+  );
 }
 
 ProductsTable.propTypes = {
   loaded: PropTypes.bool.isRequired,
   data: PropTypes.array.isRequired,
   setDataForm: PropTypes.func.isRequired,
-  deleteProduct: PropTypes.func.isRequired,
+  deleteProduct: PropTypes.func.isRequired
 };
