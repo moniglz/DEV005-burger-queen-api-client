@@ -1,5 +1,6 @@
 .list-orders{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     
 
@@ -8,7 +9,7 @@
     /* display: flex;
     flex-direction: column; */
 
-    width: 300px;
+    width: 250px;
     height: 200px;
     background: yellow;
     border-radius: 15px;
@@ -18,8 +19,9 @@
     
 }
 .order-header{
-    
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    /* text-align: center; */
 }
 .order-footer{
     background-color: white;
@@ -31,7 +33,23 @@
     padding: 0.5rem 1rem;  
    justify-content: flex-end;  
 }
-/* .order-body{
+.order-body{
+    overflow: auto;
+    height: 80px;
+}
+.order-body p{
+    margin: 0;
+}
+.list-orders{
+    width: 65%;
+    height: 80vh;
+    overflow: auto;
+}
+.status-pedido{
     display: flex;
-    display: inline;
-} */
+    
+}
+.details-order-chef{
+    width: 40%;
+}
+

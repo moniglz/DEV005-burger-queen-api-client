@@ -1,12 +1,21 @@
 import { useEffect, useState } from "react"
 import './StatusPedido.css'
-import { StatusPedidoDetails } from "./StatusPedidoDetails";
+import { OrderStatus } from "./OrderStatus";
 
 
 export const StatusPedido = () => {
     const token=localStorage.getItem('token');
     const [db, setDb]=useState('');
     const [loaded, setLoaded]=useState(false)
+    
+
+    //Listar el detalle de las órdenes
+    const [orderItems, setOrderItems] = useState([]);
+
+    const handleAddToOrder = (order) => {
+      setOrderItems(order);
+    };
+
 
       //Listar órdenes
   useEffect(() => {
@@ -43,32 +52,38 @@ export const StatusPedido = () => {
             loaded===false? 
             <div>Sin datos</div>
             :
-            <div className="list-orders">{
-            db.map((d)=>{return(
-                <div key={d.id} className='order'>
-                <div className="order-header">{ d.client}</div>  
-                <hr />
-                <div className="order-body">
-                {d.products.map((ps)=>{return(
-                // <p key={d.id}>{ps.qty}</p>,
-                <p><span>{ps.qty}  </span><span>{ps.product.name}</span></p>,
-                // <StatusPedidoDetails ps={ps} />
-                )}
-                    
-                )}
-                </div>
-                <hr />
-                <div className="order-footer">
-                    {d.status}
+            <>
+            <div className="status-pedido">
+              <div className="list-orders">{
+              db.map((d)=>{return(
+                  <div key={d.id} className='order' onClick={()=>handleAddToOrder(d)}>
+                    <div className="order-header"><span>{ d.id, d.client}</span><span>Hora del pedido: { d.dataEntry.slice(d.dataEntry.length-5)}</span></div>  
+                    <hr />
+                    <div className="order-body">
+                    {d.products.map((ps)=>{return(
+                    // <p key={d.id}>{ps.qty}</p>,
+                    <p><span>{ps.qty}  </span><span>{ps.product.name}</span></p>,
+                    // <StatusPedidoDetails ps={ps} />
+                    )}
+                        
+                    )}
+                    </div>
+                    <hr />
+                    <div className="order-footer">
+                        {d.status}
 
-                </div>
-                
+                    </div>                    
+                  </div>)
+              })
+              }
+              </div>
+              <div className="details-order-chef">
+                <OrderStatus orderItems={orderItems}/>
+              </div>
 
-                    {/* <StatusPedidoDetails details={d}/> */}
-                    
-                </div>)
-            })
-            }</div>
+            </div>
+            </>
+
     }
     </>
   )

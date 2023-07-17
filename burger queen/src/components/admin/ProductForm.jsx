@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "../EmployeeForm.css";
-
+import PropTypes from "prop-types";
 
 //import {guardar} from "/src/routes/Admin.jsx";
 
@@ -12,10 +12,8 @@ const initialForm={
   type:'',
   dateEntry:''};
 
-
 const ProductForm=({createProduct, updateProduct, dataForm, setDataForm})=> {
 
-  
   const [form, setForm]=useState(initialForm)
   
   useEffect(()=>{
@@ -26,7 +24,6 @@ const ProductForm=({createProduct, updateProduct, dataForm, setDataForm})=> {
       setForm(initialForm)
     }
   },[dataForm])
-
 
   const handleChange=(e)=>{
     setForm({
@@ -123,3 +120,9 @@ const ProductForm=({createProduct, updateProduct, dataForm, setDataForm})=> {
 
   export default ProductForm;
   
+ProductForm.propTypes = {
+  createProduct: PropTypes.func.isRequired,
+  updateProduct: PropTypes.func.isRequired,
+  dataForm: PropTypes.object,
+  setDataForm: PropTypes.func.isRequired
+};

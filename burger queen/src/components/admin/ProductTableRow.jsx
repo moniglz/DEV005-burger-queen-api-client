@@ -1,10 +1,8 @@
-//import React from 'react'
 // import '../assets/icons/all.min.js'
 // //import '../assets/icons/all.min.css'
-
+import PropTypes from "prop-types";
 
 export const ProductTableRow = ({product, setDataForm, deleteProduct}) => {
-    
     const {id,name, price, image, type, dateEntry}=product;
     //console.log(user)
   return (
@@ -22,5 +20,18 @@ export const ProductTableRow = ({product, setDataForm, deleteProduct}) => {
             </td>
     </tr>
     
-  )
+  );
 }
+
+ProductTableRow.propTypes = {
+  product: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    dateEntry: PropTypes.string.isRequired,
+  }).isRequired,
+  setDataForm: PropTypes.func.isRequired,
+  deleteProduct: PropTypes.func.isRequired,
+};
