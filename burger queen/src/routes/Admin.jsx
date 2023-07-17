@@ -1,6 +1,5 @@
 import { AsideBar } from "../components/Aside";
 import "./Admin.css";
-//import { useState, useEffect } from "react";
 //import { handleClickEditar } from "../services/users.service";
 import { Products } from '../components/admin/Products'
 import { Employees } from "../components/Employees";
@@ -11,8 +10,8 @@ import { useState } from "react";
 export const Admin = () => {
   const [navigate, setNavigate]=useState('Empleados')
 
-  const email=localStorage.getItem('email');
-  const role=localStorage.getItem('role');
+  const email = localStorage.getItem('email');
+  const role = localStorage.getItem('role');
   
   return (
     <>
@@ -21,8 +20,7 @@ export const Admin = () => {
           <nav className="nav-header">
             <div className="menu-left">
             <label htmlFor="btn-nav" className="btn-nav"><i className="fas fa-bars"></i></label>
-              {/* <img id="iconM" src="./src/assets/img/icono_menu.png" alt="icono-menu" /> */}
-              <img id="logoH" src="./src/assets/img/logo_header.png" alt="logo-burgerqueen" />
+            <img id="logoH" src="./src/assets/img/logo_header.png" alt="logo-burgerqueen" />
             </div>
           
             <div className="dataUser">

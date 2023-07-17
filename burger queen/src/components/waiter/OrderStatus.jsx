@@ -8,8 +8,8 @@
 //     status:''
 // }
 export const OrderStatus = ({orderItems}) => {
-        console.log(orderItems)
-    const [id, userId, client, products, status]=Object.values(orderItems); 
+  console.log(orderItems)
+  const [id, userId, client, products, status] = Object.values(orderItems); 
 //     const [orderDetails, setOrderDetails]=useState([])
 
 //    useEffect(()=>{

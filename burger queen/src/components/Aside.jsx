@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./Aside.css";
-import { Logout } from "./logout";
+import { Logout } from "./logout.jsx";
 import "../routes/Admin.css";
 import PropTypes from "prop-types";
 
@@ -20,7 +20,7 @@ export const AsideBar = ({ setNavigate }) => {
 
   return (
     <>
-      {role === "admin" ? (
+      {role === "admin" ? 
         <nav className="nav-aside">
           <div className="menu-top">
             <ul className="navigation">
@@ -36,8 +36,6 @@ export const AsideBar = ({ setNavigate }) => {
                   <span name="productos">Productos</span>
                 </a>
               </li>
-              {/* </ul>
-                </div> */}
               <li onClick={handleNavigate}>
                 <a href="">
                   <i className="fa fa-plus-circle"></i>
@@ -45,7 +43,7 @@ export const AsideBar = ({ setNavigate }) => {
                 </a>
               </li>
               <li onClick={handleNavigate}>
-                <a href="#">
+                <a href="">
                   <i className="fa fa-list-check"></i>
                   <span>Estatus pedido</span>
                 </a>
@@ -61,34 +59,39 @@ export const AsideBar = ({ setNavigate }) => {
             </ul>
           </div>
         </nav>
-      ) : role === "waiter" ? (
+
+
+      : role === "waiter" ? (
         <div className="options-waiter">
           <ul className="list-unstyled ps-0">
-          <li className="mb-1" onClick={handleNavigate}>
-                <a href="#">
-                  <i className="fa fa-plus-circle"></i>
-                  <span>Nueva orden</span>
-                </a>
-              </li>
+            <li className="mb-1" onClick={handleNavigate}>
+              <a href="#">
+                <i className="fa fa-plus-circle"></i>
+                <span>Nueva orden</span>
+              </a>
+            </li>
 
             <li className="mb-1" onClick={handleNavigate}>
-                <a href="#">
-                  <i className="fa fa-list-check"></i>
-                  <span>Estatus pedido</span>
-                </a>
-              </li>
+              <a href="#">
+                <i className="fa fa-list-check"></i>
+                <span>Estatus pedido</span>
+              </a>
+            </li>
           </ul>
 
           <section className="logout side-bar">
             <Logout />
           </section>
+
         </div>
-      ) : role === "chef"(
-        <p>Cocinero</p>
-      )}
-    </>
-  );
-};
+      ) 
+      
+      : <p>Cocinero</p> }
+        
+        </>
+      );
+    };
+    
 
 AsideBar.propTypes = {
   setNavigate: PropTypes.func.isRequired,

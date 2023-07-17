@@ -16,8 +16,10 @@ export const Waiter = () => {
     setOrderItems([...orderItems, newOrderItem]);
   };
 
-  const email=localStorage.getItem('email');
-  const role=localStorage.getItem('role');
+  const email = localStorage.getItem('email');
+  const role = localStorage.getItem('role');
+
+  const [navigate, setNavigate] = useState("MenuTab");
 
   return (
     <>
@@ -38,16 +40,23 @@ export const Waiter = () => {
         </header>
 
         <aside className="side-bar">
-          <AsideBar />
+          <AsideBar setNavigate={setNavigate} />
         </aside>
 
-        <section className="menu-tab">
-          <MenuTab handleAddToOrder={handleAddToOrder} />
-        </section>
-
-        <section className='o-container'>
-          <OrderDetails orderItems={orderItems} setOrderItems={setOrderItems}/>
-        </section>
+        <div className="menuorder-container">
+          {navigate === 'Nueva orden' || navigate === 'MenuTab' ? (
+            <>
+              <section className="menu-tab">
+                <MenuTab handleAddToOrder={handleAddToOrder} />
+              </section>
+              <section className="o-container">
+                <OrderDetails orderItems={orderItems} setOrderItems={setOrderItems} />
+              </section>
+            </>
+          ) : navigate === 'Estatus pedido' ? (
+            <p>Aquí irán las ordenes generadas</p>
+          ) : null}
+        </div>
       </div>
     </>
   );
