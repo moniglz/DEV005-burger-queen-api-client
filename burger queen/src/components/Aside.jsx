@@ -74,7 +74,7 @@ export const AsideBar = ({ setNavigate }) => {
             <li className="mb-1" onClick={handleNavigate}>
               <a href="#">
                 <i className="fa fa-list-check"></i>
-                <span>Estatus pedidos</span>
+                <span>Estatus pedido</span>
               </a>
             </li>
           </ul>

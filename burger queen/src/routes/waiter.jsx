@@ -53,7 +53,7 @@ export const Waiter = () => {
                 <OrderDetails orderItems={orderItems} setOrderItems={setOrderItems} />
               </section>
             </>
-          ) : navigate === 'Estatus pedidos' ? (
+          ) : navigate === 'Estatus pedido' ? (
             <p>Aquí irán las ordenes generadas</p>
           ) : null}
         </div>
