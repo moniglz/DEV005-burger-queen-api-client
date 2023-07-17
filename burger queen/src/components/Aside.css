@@ -43,7 +43,7 @@ html {
   transition: all 0.5s ease-in-out;
 }
 
-.navigation a{
+.navigation a {
   color:var(--main-color);
   display: block;
   line-height:3.5;
@@ -55,7 +55,6 @@ html {
 
 .navigation a:hover{
   transform:translateX(10%);
-  
 }
 .navigation li:hover, .navigation li:active{
   background: #FCCF00; 

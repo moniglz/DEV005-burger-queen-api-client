@@ -19,7 +19,7 @@ export const OrderDetails = ({ orderItems }) => {
         <thead className="new-order-title">
           <tr>
             <th id="title-h"> Nueva orden </th>
-            <input type="text" className="clientName" maxLength={30} placeholder="Nombre del cliente"/>
+            <td id="client-name"><input type="text" className="client-name" maxLength={30} placeholder="Nombre del cliente"/></td>
           </tr>
         </thead>
 

@@ -1,10 +1,10 @@
 .menu-tab {
   display: flex;
-  height: 80%;
-  width: 80%;
+  height: 100%;
+  width: 100%;
   position: absolute;
-  margin: 5.6em 4em 5.6em 9.5em;
-  flex-direction: column;
+  margin: 0.2em 4em 0.6em -0.3em;
+  flex-direction: row;
   flex-wrap: nowrap;
 }
 
