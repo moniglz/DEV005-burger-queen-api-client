@@ -367,3 +367,51 @@ menu-bottom {
   background-color: #c78553;
   cursor: not-allowed;
 }
+
+.order-sent-success {
+  height: 2.4em;
+  width: 100%;
+  color: white;
+  background-color: rgb(7, 152, 41);
+  border-radius: 15px;
+  font-family: var(--f-text);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+/*Ordenes existentes*/
+.existing-orders {
+  margin-top: 2em;
+}
+
+.order {
+  margin-bottom: 2em;
+  padding: 1em;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+}
+
+.order-client,
+.order-date,
+.order-products {
+  margin: 0;
+}
+
+.order-client {
+  font-weight: bold;
+}
+
+.order-products {
+  margin-top: 0.5em;
+  font-weight: bold;
+}
+
+.product-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.product-item {
+  margin-bottom: 0.5em;
+}

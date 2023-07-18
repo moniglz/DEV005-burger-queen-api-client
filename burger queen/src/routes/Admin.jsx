@@ -4,7 +4,7 @@ import "./Admin.css";
 import { Products } from '../components/admin/Products'
 import { Employees } from "../components/Employees";
 import { MenuTab } from '../components/Menu-tab'
-import { StatusPedido } from '../components/waiter/StatusPedido'
+import { StatusPedido } from '../components/waiter/StatusPedido';
 import { useState } from "react";
 
 export const Admin = () => {

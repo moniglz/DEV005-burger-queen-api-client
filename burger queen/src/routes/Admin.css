@@ -68,9 +68,10 @@ td button {
 .menu-left {
   align-content: center;
 }
-#logoH {
-  margin-left: 30px;
+.menu-left #logoH {
+  margin-left: 3.4em;
   margin-top: -0.7rem;
+  height: 4em;
 }
 
 /*Boton menú*/
@@ -96,3 +97,4 @@ td button {
   transition: 0.2s ease;
   /* background:rgba(0,0,0,.1); */
 }
+

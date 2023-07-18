@@ -1,10 +1,10 @@
 import '../index.css';
 import "./waiter.css";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AsideBar } from "../components/Aside.jsx";
 import { MenuTab } from "../components/Menu-tab";
 import { OrderDetails } from "../components/OrderDetails";
-// import { StatusPedido } from '../components/waiter/StatusPedido';
+import { getOrders } from '../services/orders.service';
 
 export const Waiter = () => {  
   const [orderItems, setOrderItems] = useState([]);
@@ -25,6 +25,20 @@ export const Waiter = () => {
   const role = localStorage.getItem('role');
 
   const [navigate, setNavigate] = useState("MenuTab");
+
+  useEffect(() => {
+    fetchExistingOrders();
+  }, []);
+
+  const fetchExistingOrders = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      await getOrders(token); 
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
 
   return (
     <>
@@ -60,12 +74,15 @@ export const Waiter = () => {
             </>
           ) : navigate === 'Estatus pedido' ? (
             <>
-              <p>Aquí irán las ordenes generadas</p>
-              {/* <StatusPedido /> */}
+            <div className="existing-orders">
+              <p>Aquí van las ordenes existentes</p>
+            </div>
             </>
           ) : null}
         </div>
       </div>
     </>
+
   );
 };
+
