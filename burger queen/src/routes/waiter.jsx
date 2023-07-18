@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { AsideBar } from "../components/Aside.jsx";
 import { MenuTab } from "../components/Menu-tab";
 import { OrderDetails } from "../components/OrderDetails";
+// import { StatusPedido } from '../components/waiter/StatusPedido';
 
 export const Waiter = () => {  
   const [orderItems, setOrderItems] = useState([]);
@@ -14,6 +15,10 @@ export const Waiter = () => {
       price: productPrice,
     };
     setOrderItems([...orderItems, newOrderItem]);
+  };
+
+  const handleOrderSent = () => {
+    setOrderItems([]);
   };
 
   const email = localStorage.getItem('email');
@@ -50,11 +55,14 @@ export const Waiter = () => {
                 <MenuTab handleAddToOrder={handleAddToOrder} />
               </section>
               <section className="o-container">
-                <OrderDetails orderItems={orderItems} setOrderItems={setOrderItems} />
+                <OrderDetails orderItems={orderItems} handleOrderSent={handleOrderSent} />
               </section>
             </>
           ) : navigate === 'Estatus pedido' ? (
-            <p>Aquí irán las ordenes generadas</p>
+            <>
+              <p>Aquí irán las ordenes generadas</p>
+              {/* <StatusPedido /> */}
+            </>
           ) : null}
         </div>
       </div>

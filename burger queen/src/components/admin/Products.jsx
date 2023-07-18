@@ -3,7 +3,7 @@ import ProductForm from "./ProductForm";
 import { ProductsTable } from './ProductsTable';
 
 const token=localStorage.getItem('token');
-  console.log('este es el toke: '+token)
+// console.log('este es el token: ' + token);
 
 export const Products = () => {
 

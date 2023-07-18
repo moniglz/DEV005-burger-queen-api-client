@@ -1,4 +1,5 @@
 //import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 // const statusInitial={
 //     id:'',
@@ -42,3 +43,7 @@ export const OrderStatus = ({orderItems}) => {
   )
 
 }
+
+OrderStatus.propTypes = {
+  orderItems: PropTypes.object.isRequired
+};

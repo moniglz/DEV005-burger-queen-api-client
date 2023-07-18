@@ -363,3 +363,7 @@ menu-bottom {
   border-radius: 15px;
   background-color: #ff6d00;
 }
+.btn-sendorder:disabled {
+  background-color: #c78553;
+  cursor: not-allowed;
+}

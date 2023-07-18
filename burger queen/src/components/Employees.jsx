@@ -5,7 +5,7 @@ import { EmployeesTable } from "./EmployeesTable";
 
 
 const token = localStorage.getItem("token");
-console.log("este es el toke: " + token);
+// console.log("este es el token: " + token);
 
 export const Employees = () => {
 
