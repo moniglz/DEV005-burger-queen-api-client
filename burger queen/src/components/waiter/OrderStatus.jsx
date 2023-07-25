@@ -1,49 +1,72 @@
-//import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-// const statusInitial={
-//     id:'',
-//     userId:'',
-//     client:'',
-//     products:[],
-//     status:''
-// }
-export const OrderStatus = ({orderItems}) => {
-  console.log(orderItems)
-  const [id, userId, client, products, status] = Object.values(orderItems); 
-//     const [orderDetails, setOrderDetails]=useState([])
+export const OrderStatus = ({ orderItems, updateStatus }) => {
+  console.log(orderItems);
+  const { id, userId, client, products, status } = orderItems;
 
-//    useEffect(()=>{
-//     setOrderDetails(statusInitial)
-//     setOrderDetails(orderItems)
-    
-//    },[orderItems])
-    // console.log(typeof(products))
-    
+  const handleclick = () => {
+    console.log("userId:", userId);
+
+    orderItems.status = "delivered";
+    console.log(orderItems.status);
+    updateStatus(
+      orderItems
+      //   {
+      //   ...orderItems,
+      //   [status]:'delivered',
+      // }
+    );
+    console.log(orderItems);
+  };
+
   return (
     <>
-
-    <div className='order-status'>
-        <div className='order-status-header'>
-            <p>Orden # <span>{id}</span><span>{client}</span></p>
+      <div className="order-status">
+        <div className="order-status-header">
+          <p>
+            Orden # <span>{id} - </span> <span>{client}</span>
+          </p>
         </div>
         <hr />
-        <div className='order-status-body'>
-        {products.map(p=>(
-            <p key={id}><span>{p.qty}</span>{p.product.name}<span></span></p>
-        ))}
-            
+        <div className="order-status-body">
+          {products !== undefined &&
+            products.map((p) => (
+              <p key={Math.random()}>
+                <span>{p.qty} </span>
+                {p.product.name}
+                <span></span>
+              </p>
+            ))}
         </div>
-        <div className='order-status-footer'>
-
+        <div className="order-status-footer">
+          <button
+            className={"btn-sendorder " + status}
+            disabled={status !== "pending" && "false"}
+            onClick={handleclick}
+          >
+            {status ? status : "Pending"}
+          </button>
         </div>
-    </div>
-
+      </div>
     </>
-  )
-
-}
+  );
+};
 
 OrderStatus.propTypes = {
-  orderItems: PropTypes.object.isRequired
+  orderItems: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    userId: PropTypes.number.isRequired,
+    client: PropTypes.string.isRequired,
+    products: PropTypes.arrayOf(
+      PropTypes.shape({
+        qty: PropTypes.number.isRequired,
+        product: PropTypes.shape({
+          name: PropTypes.string.isRequired,
+          // Add other properties of the product object if needed
+        }).isRequired,
+      })
+    ).isRequired,
+    status: PropTypes.string.isRequired,
+  }).isRequired,
+  updateStatus: PropTypes.func.isRequired,
 };

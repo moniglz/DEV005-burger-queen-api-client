@@ -82,7 +82,6 @@
       .email::placeholder,
       .password::placeholder {
         text-align: left;
-        padding-left: .3rem;
         font-size: 1.1em;
       }
 

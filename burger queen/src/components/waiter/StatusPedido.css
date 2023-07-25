@@ -1,55 +1,176 @@
 .list-orders{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
     
 
 }
 .order{
-    /* display: flex;
-    flex-direction: column; */
-
-    width: 250px;
-    height: 200px;
-    background: yellow;
-    border-radius: 15px;
-    padding: 1rem;
-    border: 1px solid rgb(202, 202, 191);
-    margin: 10px;
-    
+  /* display: flex;
+  flex-direction: column; */
+  width: 250px;
+  height: 200px;
+  background: rgb(255, 255, 255);
+  border-radius: 15px;
+  padding: 1rem;
+  border: 1px solid rgb(202, 202, 191);
+  margin: 10px;
+  font-size: 12px;
+  
 }
 .order-header{
-    display: flex;
-    justify-content: space-between;
-    /* text-align: center; */
+  display: flex;
+  justify-content: space-between;
+  /* text-align: center; */
 }
 .order-footer{
-    background-color: white;
-    height: 43px;
-    margin-top: -15px;
-    margin-left: -16px;
-    margin-right: -16px;
-    border-radius: 0 0 15px 15px;
-    padding: 0.5rem 1rem;  
-   justify-content: flex-end;  
+  background-color: white;
+  height: 43px;
+  margin-top: -15px;
+  margin-left: -16px;
+  margin-right: -16px;
+  border-radius: 0 0 15px 15px;
+  padding: 0.5rem 1rem;  
+  justify-content: flex-end;  
 }
 .order-body{
-    overflow: auto;
-    height: 80px;
+  overflow: auto;
+  height: 80px;
 }
 .order-body p{
-    margin: 0;
+  margin: 0;
 }
 .list-orders{
-    width: 65%;
-    height: 80vh;
-    overflow: auto;
+  width: 65%;
+  height: 80vh;
+  overflow: auto;
 }
 .status-pedido{
-    display: flex;
-    
+  display: flex;
+  
 }
+
+/*Order details*/
 .details-order-chef{
-    width: 40%;
+  width: 40%;
+  height: 90vh;
 }
+.order-status{
+  width: 100%;
+  display: flex;
+  height: 85vh;
+  top: 1.6em;
+  right: -2em;
+  /* position: absolute; */
+  background: rgba(255, 231, 170, 0.55);
+  border-radius: 15px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  padding: 2em;
+  margin: 0 1em;
+}
+
+.order-status hr{
+  margin: 0;
+  padding: 0;
+}
+
+.order-status-header{
+  font-weight: bold;
+  width: 100%;
+  height: 50px;
+  text-align: start;
+
+
+}
+
+.order-status-body{
+  margin-top: 20px;
+  height: 360px;
+  overflow: auto;
+}
+
+.order-status-footer{
+}
+
+.order-status-footer .delivered{
+  background: #BCBCBC;
+}
+
+.pending{
+  background: #f5f056;
+}
+
+.delivered{
+  background: #c7ee5b;
+}
+
+.order-footer span{
+  padding: 0.3em;
+  border-radius: 20px;
+}
+.order-header span{
+  font-weight: bold;
+}
+
+.order-status-footer .pending{
+  background-color: #ff6d00;
+}
+
+/*Para vista waiter*/
+.menuorder-container .status-pedido {
+  display: flex;
+  height: 106%;
+  width: 100%;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.menuorder-container .status-pedido .details-order-chef {
+  margin-left: -1em;
+  position: relative;
+  right: -0.5em;
+}
+
+.menuorder-container .status-pedido .list-orders {
+  display: flex;
+  margin: 0;
+  height: 100%;
+  width: 80%;
+  flex-direction: row;
+  overflow-y: scroll;
+  justify-content: space-between;
+  align-content: flex-start;
+}
+.menuorder-container .order {
+  width: 250px;
+  height: 200px;
+  background: rgb(255, 255, 255);
+  border-radius: 15px;
+  padding: 1rem;
+  border: 1px solid rgb(202, 202, 191);
+  margin: 1em 1em 1.4em 1em;
+  font-size: 12px;
+}
+
+.menuorder-container .pending{
+  background: #f5f056;
+}
+
+.menuorder-container .delivered{
+  background: #c7ee5b;
+}
+
+.menuorder-container .order-status-footer {
+  display: flex;
+}
+
+
+@media (max-width:1024px){
+  .list-orders{
+    width: 35%;
+  }
+}
+
 

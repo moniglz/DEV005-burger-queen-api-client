@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { sendOrder } from '../services/orders.service';
 
-export const OrderDetails = ({ orderItems, handleOrderSent }) => {
+export const OrderDetails = ({ orderItems, handleOrderSent, userId }) => {
   const [clientName, setClientName] = useState('');
   const [isOrderSent, setIsOrderSent] = useState(false);
 
@@ -14,38 +15,42 @@ export const OrderDetails = ({ orderItems, handleOrderSent }) => {
   };
 
   const handleSendOrder = () => {
+    const products = orderItems.map((item) => ({
+      qty: item.quantity > 0 ? item.quantity : 1,
+      product: {
+        id: item.id,
+        name: item.name,
+        price: item.price,
+        image: item.image,
+        type: item.type,
+        dateEntry: item.dateEntry,
+      },
+    }));
+
     const order = {
-      clientName: clientName,
-      orderItems: orderItems,
-      orderDate: new Date().toLocaleString()
+      userId: userId, 
+      client: clientName,
+      products: products,
+      status: "pending",
     };
 
-    //Enviar la orden a La API
-    fetch("http://localhost:8080/orders", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("token")}`
-      },
-      body: JSON.stringify(order)
-    })
-      .then((response) => {
-        if (response.status === 201) {
-          console.log("¡Orden enviada con éxito!");
-          setIsOrderSent(true);
-          setTimeout(() => {
-            setClientName("");
-            setIsOrderSent(false);
-            handleOrderSent();
-          }, 8000);
-        } else if (response.status >= 400) {
-          throw new Error("Error al enviar la orden");
-        }
+    order.dateEntry = new Date().toLocaleString();
+
+    //Enviar la orden a la API utilizando la función sendOrder
+    sendOrder(localStorage.getItem("token"), order)
+      .then(() => {
+        setIsOrderSent(true);
+        setTimeout(() => {
+          setClientName("");
+          setIsOrderSent(false);
+          handleOrderSent();
+        }, 7000);
       })
       .catch((error) => {
         console.error("Error al enviar la orden:", error);
       });
   };
+
 
   return (
     <>
@@ -113,5 +118,6 @@ export const OrderDetails = ({ orderItems, handleOrderSent }) => {
 
 OrderDetails.propTypes = {
   orderItems: PropTypes.array.isRequired,
-  handleOrderSent: PropTypes.func.isRequired
+  handleOrderSent: PropTypes.func.isRequired,
+  userId: PropTypes.number.isRequired,
 };

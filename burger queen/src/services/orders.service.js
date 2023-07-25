@@ -1,3 +1,4 @@
+//Obtener
 const url = "http://localhost:8080";
 
 export const getOrders = (token) => {
@@ -20,6 +21,30 @@ export const getOrders = (token) => {
     })
     .catch((error) => {
       console.log(error);
+      throw error;
+    });
+};
+
+//Mandar
+export const sendOrder = (token, order) => {
+  return fetch(`${url}/orders`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(order),
+  })
+    .then((response) => {
+      if (response.status === 201) {
+        console.log("¡Orden enviada con éxito!");
+        return response.json();
+      } else if (response.status >= 400) {
+        throw new Error("Error al enviar la orden");
+      }
+    })
+    .catch((error) => {
+      console.error("Error al enviar la orden:", error);
       throw error;
     });
 };
